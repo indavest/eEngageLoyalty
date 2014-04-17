@@ -1,0 +1,43 @@
+﻿@model LoyaltyAdministration.Models.NewUserModel
+
+@{
+    if (Session["RestaurantName"] != null)
+    {
+        ViewBag.Title = Session["RestaurantName"] + " Administration";
+    }
+    else
+    {
+        ViewBag.Title = "Business Administration";
+    }
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+
+<div class="addUsersDiv">
+@if (!IsPost)
+{
+    using (Html.BeginForm())
+    {
+        @Html.LabelFor(m => m.UserName, "Email Address")
+        @Html.TextBoxFor(m => m.UserName)
+
+        @Html.LabelFor(m => m.RoleId, "User Role")
+        @Html.DropDownListFor(m => m.RoleId, (SelectList)(ViewData["Roles"]))
+
+        <br />
+        <br />
+        <input type="submit" value="Add User" />
+        <br />
+        @Html.ValidationSummary()
+    }
+}
+</div>
+
+<div class="addUsersDiv">
+    <h3>@ViewData["Status"]</h3>
+    <p>
+    @ViewData["Message"]
+    </p>
+</div>

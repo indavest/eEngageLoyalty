@@ -1,0 +1,49 @@
+﻿@model LoyaltyAdministration.Models.PunchCardRewardModel
+
+@{
+    if (Session["RestaurantName"] != null)
+    {
+        ViewBag.Title = Session["RestaurantName"] + " Administration";
+    }
+    else
+    {
+        ViewBag.Title = "Business Administration";
+    }
+
+    ViewBag.Title += ": Punchcard Rewards";
+    
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+
+<div class="addUsersDiv">
+@if (!IsPost)
+{
+    using (Html.BeginForm())
+    {
+        @Html.LabelFor(m => m.NumberOfItems, "Target Quantity")
+        @Html.TextBoxFor(m => m.NumberOfItems)
+
+        @Html.LabelFor(m => m.SkusToTrack, "Skus To Track")
+        @Html.TextAreaFor(m => m.SkusToTrack)
+
+        @Html.LabelFor(m => m.RewardSku, "Reward Sku")
+        @Html.TextBoxFor(m => m.RewardSku)
+
+        <br />
+        <br />
+        <input type="submit" value="Create Reward" />
+        <br />
+        @Html.ValidationSummary()
+    }
+}
+</div>
+
+<div class="addUsersDiv">
+    <h3>@ViewData["PunchCardRewardStatus"]</h3>
+    <p>
+    @ViewData["PunchCardRewardMessage"]
+    </p>
+</div>

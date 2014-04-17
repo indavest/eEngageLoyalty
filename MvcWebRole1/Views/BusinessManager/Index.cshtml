@@ -1,0 +1,34 @@
+﻿@model LoyaltyAdministration.Models.NewUserModel
+
+@{
+    if (Session["RestaurantName"] != null)
+    {
+        ViewBag.Title = Session["RestaurantName"] + " Administration";
+    }
+    else
+    {
+        ViewBag.Title = "Business Administration";
+    }
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+
+@{
+    string userName = User.Identity.Name;
+    <br />
+    <br />
+    @Html.ActionLink("PunchCard Rewards", "Index", "Reward")
+    <br />
+    @Html.ActionLink("GiftCard Rewards", "GiftCard", "Reward")
+    <br />
+    @Html.ActionLink("Redeem Coupon Codes", "Index", "Redemption")
+    <br />
+    @Html.ActionLink("Award Coupon Codes", "Index", "Coupon")
+    <br />
+    @Html.ActionLink("Loaylty Analytics", "Index", "Analytics")
+    <br />
+    @Html.ActionLink("Generate Coupons", "Generate", "Coupon")
+}
+

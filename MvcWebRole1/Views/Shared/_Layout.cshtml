@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+@{
+    var jTableStyle = "metro/lightgray/jtable.css";
+    if (!string.IsNullOrEmpty(Request["jTableStyle"]))
+    {
+        jTableStyle = Request["jTableStyle"];
+    }
+}
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title - eEngage Solutions</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+        @Scripts.Render("~/bundles/modernizr")
+        <link href="../../Content/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+        @Scripts.Render("~/bundles/jquery")
+        <script src="@Url.Content("~/Scripts/jquery-ui-1.8.24.min.js")" type="text/javascript"></script>
+
+        <link href="@Url.Content("~/Scripts/jtable/themes/" + jTableStyle)" rel="stylesheet" type="text/css" />
+
+        <script type="text/javascript" src="@Url.Content("~/Scripts/jtable/jquery.jtable.js")"></script>
+        <link href="../../Content/bootStrapCss/bootstrap.css" rel="stylesheet" type="text/css" />
+        <script src="../../Scripts/bootstrap.min.js" type="text/javascript"></script>
+        <script src="../../Scripts/jquery.validate.min.js" type="text/javascript"></script>
+        @Styles.Render("~/Content/css")
+    </head>
+    <body>
+        <header>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p class="site-title">@Html.ActionLink("eMunching", "Index", "Home")</p>
+                </div>
+                <div class="float-right">
+                    <section id="login">
+                        @Html.Partial("_LoginPartial")
+                    </section>
+                    <nav>
+                         @if (Session["MyMenu"] == null){
+                            Session["MyMenu"] = Html.Partial("~/Views/Shared/_Menu.cshtml");
+                          } 
+                         @Session["MyMenu"]
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <div id="body">
+            @RenderSection("featured", required: false)
+            <section class="content-wrapper main-content clear-fix">
+                @RenderBody()
+            </section>
+        </div>
+        <footer>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p>&copy; @DateTime.Now.Year - eEngage Solutions</p>
+                </div>
+            </div>
+        </footer>
+
+        @RenderSection("scripts", required: false)
+    </body>
+</html>

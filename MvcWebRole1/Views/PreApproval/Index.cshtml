@@ -1,0 +1,39 @@
+﻿@model LoyaltyAdministration.Models.PreApprovedUserModel
+
+@{
+    ViewBag.Title = "Pre-Approve Users";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+
+<div class="addUsersDiv">
+@if (!IsPost)
+{
+    using (Html.BeginForm())
+    {
+        @Html.LabelFor(m => m.EmailAddress, "Username")
+        @Html.TextBoxFor(m => m.EmailAddress)
+
+        @Html.LabelFor(m => m.RestaurantId, "Restaurant")
+        @Html.DropDownListFor(m => m.RestaurantId, (SelectList)(ViewData["Restaurants"]))
+
+        @Html.LabelFor(m => m.RoleId, "User Role")
+        @Html.DropDownListFor(m => m.RoleId, (SelectList)(ViewData["Roles"]))
+
+        <br />
+        <br />
+        <input type="submit" value="Pre Approve User" />
+        <br />
+        @Html.ValidationSummary()
+    }
+}
+</div>
+
+<div class="addUsersDiv">
+    <h3>@ViewData["PreApprovalStatus"]</h3>
+    <p>
+    @ViewData["PreApprovalMessage"]
+    </p>
+</div>

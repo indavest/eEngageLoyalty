@@ -1,0 +1,15 @@
+﻿@model LoyaltyAdministration.Models.PreApprovedUserModel
+
+@{
+    ViewBag.Title = "eMunching Administration";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<nav>
+    <ul id="SuperAdminActionMenu">
+        <li>@Html.ActionLink("Provision Restaurant", "Index", "ProvisionRestaurant")</li>
+        <li>@Html.ActionLink("Pre-Approve Users", "Index", "PreApproval")</li>        
+    </ul>
+</nav>

@@ -1,0 +1,38 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="content-wrapper">
+</div>
+
+<script src="../../Scripts/jquery-1.7.1.js" type="text/javascript"></script>
+<script src="../../Scripts/jquery-ui-1.8.20.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+
+    // Read a page's GET URL variables and return them as an associative array.
+    function getUrlVars() {
+        var vars = [], hash;
+        var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+
+        for (var i = 0; i < hashes.length; i++) {
+            hash = hashes[i].split('=');
+            vars.push(hash[0]);
+            vars[hash[0]] = hash[1];
+        }
+        return vars;
+    }
+
+    //Document Load method
+    $(document).ready(function () {
+        var now = new Date();
+        //var restaurantId = getUrlVars()['restaurantId'];
+
+        //create the URL for the API Controller
+        //var url = "redemption/Index/?restaurantId=" + restaurantId
+        var url = "redemption/Index/"
+
+        //go the Controller route
+        window.location = url;
+    });    
+</script>
+

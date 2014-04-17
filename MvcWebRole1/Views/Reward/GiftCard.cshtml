@@ -1,0 +1,117 @@
+﻿@model LoyaltyAdministration.Models.GiftCardRewardModel
+
+@{
+    if (Session["RestaurantName"] != null)
+    {
+        ViewBag.Title = Session["RestaurantName"] + " Administration";
+    }
+    else
+    {
+        ViewBag.Title = "Business Administration";
+    }
+
+    ViewBag.Title += ": Giftcard Rewards";
+    
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<br />
+
+<div id="RewardTable" style="width: 580px; margin: auto;"></div>
+
+<script type="text/javascript">
+    // Read a page's GET URL variables and return them as an associative array.
+    function getUrlVars() {
+        var vars = [], hash;
+        var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+
+        for (var i = 0; i < hashes.length; i++) {
+            hash = hashes[i].split('=');
+            vars.push(hash[0]);
+            vars[hash[0]] = hash[1];
+        }
+        return vars;
+    }
+
+    $(document).ready(function () {
+
+        //Prepare jtable plugin
+        $('#RewardTable').jtable({
+            title: 'Reward List',
+            tableId: 'createRewardTable',
+            actions: {
+                listAction: '/Reward/GiftCardRewardList',
+                deleteAction: '/Reward/DeleteGiftCardReward',
+                updateAction: '/Reward/UpdateGiftCardReward',
+                createAction: '/Reward/CreateGiftCardReward'
+            },
+            fields: {
+                Id: {
+                    key: true,
+                    create: false,
+                    edit: false,
+                    list: false
+                },
+                Name: {
+                    title: 'Name',
+                    width: '15%'
+                },
+                Description: {
+                    title: 'Description',
+                    list: false
+                }
+            }
+        });
+
+        //Load person list from server
+        $('#RewardTable').jtable('load');
+
+        //For image Select
+        $('#image-select').live('click', function () {
+            var imageContainerHtml = "";
+            $(this).toggleClass('selected');
+            if ($(this).hasClass('selected')) {
+                $.ajax({
+                    url: "Reward/GetRewardImages",
+                    type: "POST",
+                    dataType: "Json",
+                    success: function (response) {
+                        if (response.Result == "OK") {
+                            var imageList = response.Data;
+                            imageContainerHtml += "<div class='reward-img-container'>";
+                            for (var i = 0; i < imageList.length; i++) {
+                                imageContainerHtml += "<span class='reward-img-span'><img src='/Images/Rewards/" + imageList[i] + "' width='80'/></span>";
+                            }
+                            imageContainerHtml += "</div>";
+                            $('#image-select').popover({
+                                placement: 'top',
+                                html: true,
+                                content: imageContainerHtml,
+                                selector: this,
+                                title: 'Select image'
+                            });
+                            $('#image-select').popover('show');
+                        }
+                    }
+                });
+            } else {
+                $('#image-select').removeClass('selected');
+                $('#image-select').popover('destroy');
+            }
+
+
+            //Select Image
+            $(".reward-img-span").live('click', function () {
+                var img = $(this).children('img').attr('src');
+                $('#image-select').removeClass('selected');
+                $('#Edit-SelectedImage').parent().parent().remove();
+                $('#image-select').popover('destroy');
+                $('#image-select').parent().parent().after("<div class='jtable-input-field-container'><div class='jtable-input-label'></div><div class='jtable-input jtable-custom-input'><img src='" + img + "' id='Edit-SelectedImage' width='80'></div></div>");
+                $('#Edit-Image').attr('value', img);
+            });
+        });
+    });
+
+</script>

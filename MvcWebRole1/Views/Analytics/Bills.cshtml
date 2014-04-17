@@ -1,0 +1,87 @@
+﻿@{
+    if (Session["RestaurantName"] != null)
+    {
+        ViewBag.Title = Session["RestaurantName"] + " Administration";
+    }
+    else
+    {
+        ViewBag.Title = "Business Administration";
+    }
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <h2>Analtyics</h2>
+    <div id="left-container">
+        <ul class="nav nav-pills nav-stacked">
+            <li><a href="/Analytics">Beers Punched</a></li>
+            <li><a href="/Analytics/Coupons">Coupons Generated</a></li>
+            <li class="active"><a href="/Analytics/Bills">Bills Settled</a></li>
+        </ul>
+    </div>
+    <div id="analytics-container">
+        <div id="period-section"><button class="btn btn-primary" id="export-beers" type="button" style="margin:5px 0 0 0;">Export<img src="../../Images/export.png" style="height:20px;margin-bottom:2px;margin-left:5px;width:20px;"/></button><button class="btn btn-primary" id="search-records" type="button" style="float:right;margin:5px 0 0 5px;">GO</button><span>End Date: <input type="text" id="datepicker-enddate" class="input-medium"/></span><span>Start Date: <input type="text" id="datepicker-startdate" class="input-medium"/></span></div>
+        <div id="billsTableContainer"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        jQuery('#billsTableContainer').jtable({
+            title: 'Beers Punched',
+            paging: true, //Enable paging
+            pageSize: 10, //Set page size (default: 10)
+            sorting: true, //Enable sorting
+            defaultSorting: 'Created DESC', //Set default sorting
+            actions: {
+                listAction: '/Analytics/BillsList'
+            },
+            fields: {
+                BillNumber: {
+                    title: 'Bill Number',
+                    key: true,
+                    list: true
+                },
+                BeerCount: {
+                    title: 'Beers Count',
+                },
+                UniqueCode: {
+                    title: 'Unique Code',
+                },
+                UserEmail: {
+                    title: 'Email Address',
+                    list: true,
+                },
+                BillAmount: {
+                    title: 'Amount (Rs)'
+                },
+                Created: {
+                    title: 'Created',
+                    type: 'date',
+                    displayFormat: 'yy-mm-dd'
+                }
+            }
+        });
+        
+        //Load Beers punched list from server
+        $( "#datepicker-startdate" ).datepicker({ minDate: new Date(2013, 6, 27), maxDate: "+0D"}).datepicker("setDate" , new Date(2013, 7, 1) );
+        $( "#datepicker-enddate" ).datepicker({ minDate: new Date(2013, 6, 27), maxDate: "+0D"}).datepicker("setDate" , new Date() );
+        $('#billsTableContainer').jtable('load', { startDate: $( "#datepicker-startdate" ).val(), endDate: $( "#datepicker-enddate" ).val() });
+        $("#search-records").click(function(){
+            $('#billsTableContainer').jtable('load', { startDate: $( "#datepicker-startdate" ).val(), endDate: $( "#datepicker-enddate" ).val() });
+        });
+
+        $("#export-beers").click(function(){
+            /*jQuery.ajax({
+                url:"/analytics/ExportToExcel",
+                type: "POST",
+                data: {startDate: $( "#datepicker-startdate" ).val(), endDate: $( "#datepicker-enddate" ).val()},
+                dataType: "json",
+                success: function(result){
+                    //TODO
+                }
+            });*/
+            window.location.href = "/analytics/ExportBills?startDate="+$( "#datepicker-startdate" ).val()+"&endDate="+$( "#datepicker-enddate" ).val();
+        });
+    });
+</script>

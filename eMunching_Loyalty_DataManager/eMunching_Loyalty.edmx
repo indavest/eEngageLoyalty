@@ -1,0 +1,2189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="eMunching_LoyaltyModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="eMunching_LoyaltyModelStoreContainer">
+          <EntitySet Name="Admin_CouponCode_Mapping" EntityType="eMunching_LoyaltyModel.Store.Admin_CouponCode_Mapping" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="BillAmount" EntityType="eMunching_LoyaltyModel.Store.BillAmount" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CouponCode_UniqueCodeMapping" EntityType="eMunching_LoyaltyModel.Store.CouponCode_UniqueCodeMapping" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CreateNotifier_UniqueCodes" EntityType="eMunching_LoyaltyModel.Store.CreateNotifier_UniqueCodes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ErrorLogs" EntityType="eMunching_LoyaltyModel.Store.ErrorLogs" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Generated_CouponCode" EntityType="eMunching_LoyaltyModel.Store.Generated_CouponCode" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Generated_SimpleCouponCode" EntityType="eMunching_LoyaltyModel.Store.Generated_SimpleCouponCode" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Generated_UniqueCode" EntityType="eMunching_LoyaltyModel.Store.Generated_UniqueCode" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ItemCodes" EntityType="eMunching_LoyaltyModel.Store.ItemCodes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="LoyaltyTypes" EntityType="eMunching_LoyaltyModel.Store.LoyaltyTypes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="OrderDetail_Archive" EntityType="eMunching_LoyaltyModel.Store.OrderDetail_Archive" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="OrderDetails" EntityType="eMunching_LoyaltyModel.Store.OrderDetails" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Payload" EntityType="eMunching_LoyaltyModel.Store.Payload" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Restaurants" EntityType="eMunching_LoyaltyModel.Store.Restaurants" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RestaurantUsers" EntityType="eMunching_LoyaltyModel.Store.RestaurantUsers" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Rewards" EntityType="eMunching_LoyaltyModel.Store.Rewards" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RewardTypes" EntityType="eMunching_LoyaltyModel.Store.RewardTypes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RunningCounts" EntityType="eMunching_LoyaltyModel.Store.RunningCounts" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SettlementInfo_Archive" EntityType="eMunching_LoyaltyModel.Store.SettlementInfo_Archive" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SettlementInfoes" EntityType="eMunching_LoyaltyModel.Store.SettlementInfoes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TempUsers" EntityType="eMunching_LoyaltyModel.Store.TempUsers" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UniqueCode_Archive" EntityType="eMunching_LoyaltyModel.Store.UniqueCode_Archive" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UniqueCode_UserMapping" EntityType="eMunching_LoyaltyModel.Store.UniqueCode_UserMapping" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserProfile" EntityType="eMunching_LoyaltyModel.Store.UserProfile" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="webpages_Membership" EntityType="eMunching_LoyaltyModel.Store.webpages_Membership" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="webpages_OAuthMembership" EntityType="eMunching_LoyaltyModel.Store.webpages_OAuthMembership" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="webpages_Roles" EntityType="eMunching_LoyaltyModel.Store.webpages_Roles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="webpages_UsersInRoles" EntityType="eMunching_LoyaltyModel.Store.webpages_UsersInRoles" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Admin_CouponCode_Mapping_ToTableGenerated_CouponCode" Association="eMunching_LoyaltyModel.Store.FK_Admin_CouponCode_Mapping_ToTableGenerated_CouponCode">
+            <End Role="Generated_CouponCode" EntitySet="Generated_CouponCode" />
+            <End Role="Admin_CouponCode_Mapping" EntitySet="Admin_CouponCode_Mapping" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Admin_CouponCode_Mapping_ToTableUserProfile" Association="eMunching_LoyaltyModel.Store.FK_Admin_CouponCode_Mapping_ToTableUserProfile">
+            <End Role="UserProfile" EntitySet="UserProfile" />
+            <End Role="Admin_CouponCode_Mapping" EntitySet="Admin_CouponCode_Mapping" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CreateNotifier_UniqueCodes_ToRestaurant" Association="eMunching_LoyaltyModel.Store.FK_CreateNotifier_UniqueCodes_ToRestaurant">
+            <End Role="Restaurants" EntitySet="Restaurants" />
+            <End Role="CreateNotifier_UniqueCodes" EntitySet="CreateNotifier_UniqueCodes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Generated_CouponCode_ToTableRestaurant" Association="eMunching_LoyaltyModel.Store.FK_Generated_CouponCode_ToTableRestaurant">
+            <End Role="Restaurants" EntitySet="Restaurants" />
+            <End Role="Generated_CouponCode" EntitySet="Generated_CouponCode" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Generated_CouponCode_ToTableRewards" Association="eMunching_LoyaltyModel.Store.FK_Generated_CouponCode_ToTableRewards">
+            <End Role="Rewards" EntitySet="Rewards" />
+            <End Role="Generated_CouponCode" EntitySet="Generated_CouponCode" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Generated_SimpleCouponCode_ToTableRestaurant" Association="eMunching_LoyaltyModel.Store.FK_Generated_SimpleCouponCode_ToTableRestaurant">
+            <End Role="Restaurants" EntitySet="Restaurants" />
+            <End Role="Generated_SimpleCouponCode" EntitySet="Generated_SimpleCouponCode" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Generated_UniqueCodes_ToTableRestaurant" Association="eMunching_LoyaltyModel.Store.FK_Generated_UniqueCodes_ToTableRestaurant">
+            <End Role="Restaurants" EntitySet="Restaurants" />
+            <End Role="Generated_UniqueCode" EntitySet="Generated_UniqueCode" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ItemCode_ToTableRestaurant" Association="eMunching_LoyaltyModel.Store.FK_ItemCode_ToTableRestaurant">
+            <End Role="Restaurants" EntitySet="Restaurants" />
+            <End Role="ItemCodes" EntitySet="ItemCodes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderDetail_Archive_ToItemCode" Association="eMunching_LoyaltyModel.Store.FK_OrderDetail_Archive_ToItemCode">
+            <End Role="ItemCodes" EntitySet="ItemCodes" />
+            <End Role="OrderDetail_Archive" EntitySet="OrderDetail_Archive" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderDetail_Archive_ToRestaurant" Association="eMunching_LoyaltyModel.Store.FK_OrderDetail_Archive_ToRestaurant">
+            <End Role="Restaurants" EntitySet="Restaurants" />
+            <End Role="OrderDetail_Archive" EntitySet="OrderDetail_Archive" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderDetail_Archive_ToSettlementInfo" Association="eMunching_LoyaltyModel.Store.FK_OrderDetail_Archive_ToSettlementInfo">
+            <End Role="SettlementInfoes" EntitySet="SettlementInfoes" />
+            <End Role="OrderDetail_Archive" EntitySet="OrderDetail_Archive" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderDetail_ToItemCode" Association="eMunching_LoyaltyModel.Store.FK_OrderDetail_ToItemCode">
+            <End Role="ItemCodes" EntitySet="ItemCodes" />
+            <End Role="OrderDetails" EntitySet="OrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderDetail_ToRestaurant" Association="eMunching_LoyaltyModel.Store.FK_OrderDetail_ToRestaurant">
+            <End Role="Restaurants" EntitySet="Restaurants" />
+            <End Role="OrderDetails" EntitySet="OrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderDetail_ToSettlementInfo" Association="eMunching_LoyaltyModel.Store.FK_OrderDetail_ToSettlementInfo">
+            <End Role="SettlementInfoes" EntitySet="SettlementInfoes" />
+            <End Role="OrderDetails" EntitySet="OrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Restaurant_ToLoyaltyType" Association="eMunching_LoyaltyModel.Store.FK_Restaurant_ToLoyaltyType">
+            <End Role="LoyaltyTypes" EntitySet="LoyaltyTypes" />
+            <End Role="Restaurants" EntitySet="Restaurants" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RestaurantPayload" Association="eMunching_LoyaltyModel.Store.FK_RestaurantPayload">
+            <End Role="Restaurants" EntitySet="Restaurants" />
+            <End Role="Payload" EntitySet="Payload" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RestaurantTempUser" Association="eMunching_LoyaltyModel.Store.FK_RestaurantTempUser">
+            <End Role="Restaurants" EntitySet="Restaurants" />
+            <End Role="TempUsers" EntitySet="TempUsers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RestaurantUsers_ToRestaurants" Association="eMunching_LoyaltyModel.Store.FK_RestaurantUsers_ToRestaurants">
+            <End Role="Restaurants" EntitySet="Restaurants" />
+            <End Role="RestaurantUsers" EntitySet="RestaurantUsers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reward_RewardType" Association="eMunching_LoyaltyModel.Store.FK_Reward_RewardType">
+            <End Role="RewardTypes" EntitySet="RewardTypes" />
+            <End Role="Rewards" EntitySet="Rewards" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RunningCount_ToTableRestaurant" Association="eMunching_LoyaltyModel.Store.FK_RunningCount_ToTableRestaurant">
+            <End Role="Restaurants" EntitySet="Restaurants" />
+            <End Role="RunningCounts" EntitySet="RunningCounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RunningCount_ToTableRewards" Association="eMunching_LoyaltyModel.Store.FK_RunningCount_ToTableRewards">
+            <End Role="Rewards" EntitySet="Rewards" />
+            <End Role="RunningCounts" EntitySet="RunningCounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SettlementInfo_Archive_ToGenerated_UniqueCode" Association="eMunching_LoyaltyModel.Store.FK_SettlementInfo_Archive_ToGenerated_UniqueCode">
+            <End Role="Generated_UniqueCode" EntitySet="Generated_UniqueCode" />
+            <End Role="SettlementInfo_Archive" EntitySet="SettlementInfo_Archive" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SettlementInfo_Archive_ToRestaurant" Association="eMunching_LoyaltyModel.Store.FK_SettlementInfo_Archive_ToRestaurant">
+            <End Role="Restaurants" EntitySet="Restaurants" />
+            <End Role="SettlementInfo_Archive" EntitySet="SettlementInfo_Archive" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SettlementInfo_ToTableRestaurant" Association="eMunching_LoyaltyModel.Store.FK_SettlementInfo_ToTableRestaurant">
+            <End Role="Restaurants" EntitySet="Restaurants" />
+            <End Role="SettlementInfoes" EntitySet="SettlementInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UniqueCode_Archive_ToTableRestaurant" Association="eMunching_LoyaltyModel.Store.FK_UniqueCode_Archive_ToTableRestaurant">
+            <End Role="Restaurants" EntitySet="Restaurants" />
+            <End Role="UniqueCode_Archive" EntitySet="UniqueCode_Archive" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UniqueCode_UserMapping_ToTableRestaurant" Association="eMunching_LoyaltyModel.Store.FK_UniqueCode_UserMapping_ToTableRestaurant">
+            <End Role="Restaurants" EntitySet="Restaurants" />
+            <End Role="UniqueCode_UserMapping" EntitySet="UniqueCode_UserMapping" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserProfileRestaurantUser" Association="eMunching_LoyaltyModel.Store.FK_UserProfileRestaurantUser">
+            <End Role="UserProfile" EntitySet="UserProfile" />
+            <End Role="RestaurantUsers" EntitySet="RestaurantUsers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_webpages_RolesTempUser" Association="eMunching_LoyaltyModel.Store.FK_webpages_RolesTempUser">
+            <End Role="webpages_Roles" EntitySet="webpages_Roles" />
+            <End Role="TempUsers" EntitySet="TempUsers" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Admin_CouponCode_Mapping">
+          <Key>
+            <PropertyRef Name="CouponCode" />
+          </Key>
+          <Property Name="CouponCode" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BillAmount">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RestaurantId" Type="int" Nullable="false" />
+          <Property Name="BillNumber" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="NetAmount" Type="float" Nullable="false" />
+          <Property Name="TaxAmount" Type="float" Nullable="false" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="DateModified" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CouponCode_UniqueCodeMapping">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CouponCode" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="UniqueCode" Type="nvarchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="CreateNotifier_UniqueCodes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="RestaurantId" Type="int" Nullable="false" />
+          <Property Name="IsCreateNewCodes" Type="bit" Nullable="false" />
+          <Property Name="NumberofCodesToGenerate" Type="int" Nullable="false" />
+          <Property Name="IsServiced" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ErrorLogs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="Error" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Action" Type="nvarchar" Nullable="false" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="Generated_CouponCode">
+          <Key>
+            <PropertyRef Name="CouponCode" />
+          </Key>
+          <Property Name="CouponCode" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="RestaurantId" Type="int" Nullable="false" />
+          <Property Name="RewardId" Type="int" Nullable="false" />
+          <Property Name="EmailAddress" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="IsAssigned" Type="bit" Nullable="false" />
+          <Property Name="IsRedeemed" Type="bit" Nullable="false" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="DateRedeemed" Type="datetime" />
+          <Property Name="ExpirationDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Generated_SimpleCouponCode">
+          <Key>
+            <PropertyRef Name="UniqueCode" />
+          </Key>
+          <Property Name="UniqueCode" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="RestaurantId" Type="int" Nullable="false" />
+          <Property Name="DateAssigned" Type="datetime" />
+          <Property Name="IsAssigned" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Generated_UniqueCode">
+          <Key>
+            <PropertyRef Name="UniqueCode" />
+          </Key>
+          <Property Name="UniqueCode" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="RestaurantId" Type="int" Nullable="false" />
+          <Property Name="IsValidated" Type="bit" Nullable="false" />
+          <Property Name="DateValidated" Type="datetime" />
+          <Property Name="IsAssigned" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ItemCodes">
+          <Key>
+            <PropertyRef Name="ItemCode1" />
+            <PropertyRef Name="RestaurantId" />
+          </Key>
+          <Property Name="ItemCode1" Type="int" Nullable="false" />
+          <Property Name="RestaurantId" Type="int" Nullable="false" />
+          <Property Name="ItemName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="LoyaltyEnabled" Type="bit" Nullable="false" />
+          <Property Name="LoyaltyPoints" Type="int" Nullable="false" />
+          <Property Name="LoyaltyMultiplier" Type="int" Nullable="false" />
+          <Property Name="BonusPoints" Type="int" Nullable="false" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="DateModified" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LoyaltyTypes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="LoyaltyType1" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="OrderDetail_Archive">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="BillNumber" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ItemCode" Type="int" Nullable="false" />
+          <Property Name="RestaurantId" Type="int" Nullable="false" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OrderDetails">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="BillNumber" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ItemCode" Type="int" Nullable="false" />
+          <Property Name="RestaurantId" Type="int" Nullable="false" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Payload">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="LastReadFile" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="RestaurantID" Type="int" Nullable="false" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Restaurants">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="RestaurantName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="LoyaltyID" Type="int" />
+        </EntityType>
+        <EntityType Name="RestaurantUsers">
+          <Key>
+            <PropertyRef Name="RestaurantId" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="RestaurantId" Type="int" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Rewards">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="NumberOfItems" Type="int" Nullable="false" />
+          <Property Name="EligibleSKUs" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="RewardSKUs" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="RestaurantID" Type="int" Nullable="false" />
+          <Property Name="Image" Type="varchar" MaxLength="200" />
+          <Property Name="Validity" Type="int" />
+          <Property Name="Multiplier" Type="int" Nullable="false" />
+          <Property Name="RewardType" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RewardTypes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RewardType" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="RunningCounts">
+          <Key>
+            <PropertyRef Name="EmailAddress" />
+            <PropertyRef Name="RestaurantId" />
+            <PropertyRef Name="RewardId" />
+          </Key>
+          <Property Name="EmailAddress" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="RestaurantId" Type="int" Nullable="false" />
+          <Property Name="RewardId" Type="int" Nullable="false" />
+          <Property Name="RunningCount1" Type="int" Nullable="false" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="DateModified" Type="datetime" Nullable="false" />
+          <Property Name="UpdateCount" Type="int" Nullable="false" />
+          <Property Name="LastRunningCount" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SettlementInfo_Archive">
+          <Key>
+            <PropertyRef Name="BillNumber" />
+            <PropertyRef Name="RestaurantId" />
+          </Key>
+          <Property Name="BillNumber" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="RestaurantId" Type="int" Nullable="false" />
+          <Property Name="UniqueCode" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="EmailAddress" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="IsServiced" Type="bit" Nullable="false" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="DateModified" Type="datetime" Nullable="false" />
+          <Property Name="SettlementDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SettlementInfoes">
+          <Key>
+            <PropertyRef Name="BillNumber" />
+            <PropertyRef Name="RestaurantId" />
+          </Key>
+          <Property Name="BillNumber" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="RestaurantId" Type="int" Nullable="false" />
+          <Property Name="UniqueCode" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="EmailAddress" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsServiced" Type="bit" Nullable="false" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="DateModified" Type="datetime" Nullable="false" />
+          <Property Name="SettlementDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TempUsers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="EmailAddress" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="RestaurantID" Type="int" Nullable="false" />
+          <Property Name="RoleId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UniqueCode_Archive">
+          <Key>
+            <PropertyRef Name="UniqueCode" />
+          </Key>
+          <Property Name="UniqueCode" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="RestaurantId" Type="int" Nullable="false" />
+          <Property Name="DateValidated" Type="datetime" />
+        </EntityType>
+        <EntityType Name="UniqueCode_UserMapping">
+          <Key>
+            <PropertyRef Name="UniqueCode" />
+          </Key>
+          <Property Name="UniqueCode" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="EmailAddress" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="RestaurantId" Type="int" Nullable="false" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserProfile">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="56" />
+        </EntityType>
+        <EntityType Name="webpages_Membership">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="ConfirmationToken" Type="nvarchar" MaxLength="128" />
+          <Property Name="IsConfirmed" Type="bit" />
+          <Property Name="LastPasswordFailureDate" Type="datetime" />
+          <Property Name="PasswordFailuresSinceLastSuccess" Type="int" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="PasswordChangedDate" Type="datetime" />
+          <Property Name="PasswordSalt" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="PasswordVerificationToken" Type="nvarchar" MaxLength="128" />
+          <Property Name="PasswordVerificationTokenExpirationDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="webpages_OAuthMembership">
+          <Key>
+            <PropertyRef Name="Provider" />
+            <PropertyRef Name="ProviderUserId" />
+          </Key>
+          <Property Name="Provider" Type="nvarchar" Nullable="false" MaxLength="30" />
+          <Property Name="ProviderUserId" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="webpages_Roles">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="RoleId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RoleName" Type="nvarchar" Nullable="false" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="webpages_UsersInRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="RoleId" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Admin_CouponCode_Mapping_ToTableGenerated_CouponCode">
+          <End Role="Generated_CouponCode" Type="eMunching_LoyaltyModel.Store.Generated_CouponCode" Multiplicity="1" />
+          <End Role="Admin_CouponCode_Mapping" Type="eMunching_LoyaltyModel.Store.Admin_CouponCode_Mapping" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Generated_CouponCode">
+              <PropertyRef Name="CouponCode" />
+            </Principal>
+            <Dependent Role="Admin_CouponCode_Mapping">
+              <PropertyRef Name="CouponCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Admin_CouponCode_Mapping_ToTableUserProfile">
+          <End Role="UserProfile" Type="eMunching_LoyaltyModel.Store.UserProfile" Multiplicity="1" />
+          <End Role="Admin_CouponCode_Mapping" Type="eMunching_LoyaltyModel.Store.Admin_CouponCode_Mapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserProfile">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Admin_CouponCode_Mapping">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CreateNotifier_UniqueCodes_ToRestaurant">
+          <End Role="Restaurants" Type="eMunching_LoyaltyModel.Store.Restaurants" Multiplicity="1" />
+          <End Role="CreateNotifier_UniqueCodes" Type="eMunching_LoyaltyModel.Store.CreateNotifier_UniqueCodes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Restaurants">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CreateNotifier_UniqueCodes">
+              <PropertyRef Name="RestaurantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Generated_CouponCode_ToTableRestaurant">
+          <End Role="Restaurants" Type="eMunching_LoyaltyModel.Store.Restaurants" Multiplicity="1" />
+          <End Role="Generated_CouponCode" Type="eMunching_LoyaltyModel.Store.Generated_CouponCode" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Restaurants">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Generated_CouponCode">
+              <PropertyRef Name="RestaurantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Generated_CouponCode_ToTableRewards">
+          <End Role="Rewards" Type="eMunching_LoyaltyModel.Store.Rewards" Multiplicity="1" />
+          <End Role="Generated_CouponCode" Type="eMunching_LoyaltyModel.Store.Generated_CouponCode" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rewards">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Generated_CouponCode">
+              <PropertyRef Name="RewardId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Generated_SimpleCouponCode_ToTableRestaurant">
+          <End Role="Restaurants" Type="eMunching_LoyaltyModel.Store.Restaurants" Multiplicity="1" />
+          <End Role="Generated_SimpleCouponCode" Type="eMunching_LoyaltyModel.Store.Generated_SimpleCouponCode" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Restaurants">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Generated_SimpleCouponCode">
+              <PropertyRef Name="RestaurantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Generated_UniqueCodes_ToTableRestaurant">
+          <End Role="Restaurants" Type="eMunching_LoyaltyModel.Store.Restaurants" Multiplicity="1" />
+          <End Role="Generated_UniqueCode" Type="eMunching_LoyaltyModel.Store.Generated_UniqueCode" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Restaurants">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Generated_UniqueCode">
+              <PropertyRef Name="RestaurantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ItemCode_ToTableRestaurant">
+          <End Role="Restaurants" Type="eMunching_LoyaltyModel.Store.Restaurants" Multiplicity="1" />
+          <End Role="ItemCodes" Type="eMunching_LoyaltyModel.Store.ItemCodes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Restaurants">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ItemCodes">
+              <PropertyRef Name="RestaurantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderDetail_Archive_ToItemCode">
+          <End Role="ItemCodes" Type="eMunching_LoyaltyModel.Store.ItemCodes" Multiplicity="1" />
+          <End Role="OrderDetail_Archive" Type="eMunching_LoyaltyModel.Store.OrderDetail_Archive" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ItemCodes">
+              <PropertyRef Name="ItemCode1" />
+              <PropertyRef Name="RestaurantId" />
+            </Principal>
+            <Dependent Role="OrderDetail_Archive">
+              <PropertyRef Name="ItemCode" />
+              <PropertyRef Name="RestaurantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderDetail_Archive_ToRestaurant">
+          <End Role="Restaurants" Type="eMunching_LoyaltyModel.Store.Restaurants" Multiplicity="1" />
+          <End Role="OrderDetail_Archive" Type="eMunching_LoyaltyModel.Store.OrderDetail_Archive" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Restaurants">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="OrderDetail_Archive">
+              <PropertyRef Name="RestaurantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderDetail_Archive_ToSettlementInfo">
+          <End Role="SettlementInfoes" Type="eMunching_LoyaltyModel.Store.SettlementInfoes" Multiplicity="1" />
+          <End Role="OrderDetail_Archive" Type="eMunching_LoyaltyModel.Store.OrderDetail_Archive" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SettlementInfoes">
+              <PropertyRef Name="BillNumber" />
+              <PropertyRef Name="RestaurantId" />
+            </Principal>
+            <Dependent Role="OrderDetail_Archive">
+              <PropertyRef Name="BillNumber" />
+              <PropertyRef Name="RestaurantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderDetail_ToItemCode">
+          <End Role="ItemCodes" Type="eMunching_LoyaltyModel.Store.ItemCodes" Multiplicity="1" />
+          <End Role="OrderDetails" Type="eMunching_LoyaltyModel.Store.OrderDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ItemCodes">
+              <PropertyRef Name="ItemCode1" />
+              <PropertyRef Name="RestaurantId" />
+            </Principal>
+            <Dependent Role="OrderDetails">
+              <PropertyRef Name="ItemCode" />
+              <PropertyRef Name="RestaurantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderDetail_ToRestaurant">
+          <End Role="Restaurants" Type="eMunching_LoyaltyModel.Store.Restaurants" Multiplicity="1" />
+          <End Role="OrderDetails" Type="eMunching_LoyaltyModel.Store.OrderDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Restaurants">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="OrderDetails">
+              <PropertyRef Name="RestaurantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderDetail_ToSettlementInfo">
+          <End Role="SettlementInfoes" Type="eMunching_LoyaltyModel.Store.SettlementInfoes" Multiplicity="1" />
+          <End Role="OrderDetails" Type="eMunching_LoyaltyModel.Store.OrderDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SettlementInfoes">
+              <PropertyRef Name="BillNumber" />
+              <PropertyRef Name="RestaurantId" />
+            </Principal>
+            <Dependent Role="OrderDetails">
+              <PropertyRef Name="BillNumber" />
+              <PropertyRef Name="RestaurantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Restaurant_ToLoyaltyType">
+          <End Role="LoyaltyTypes" Type="eMunching_LoyaltyModel.Store.LoyaltyTypes" Multiplicity="0..1" />
+          <End Role="Restaurants" Type="eMunching_LoyaltyModel.Store.Restaurants" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LoyaltyTypes">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Restaurants">
+              <PropertyRef Name="LoyaltyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RestaurantPayload">
+          <End Role="Restaurants" Type="eMunching_LoyaltyModel.Store.Restaurants" Multiplicity="1" />
+          <End Role="Payload" Type="eMunching_LoyaltyModel.Store.Payload" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Restaurants">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Payload">
+              <PropertyRef Name="RestaurantID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RestaurantTempUser">
+          <End Role="Restaurants" Type="eMunching_LoyaltyModel.Store.Restaurants" Multiplicity="1" />
+          <End Role="TempUsers" Type="eMunching_LoyaltyModel.Store.TempUsers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Restaurants">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TempUsers">
+              <PropertyRef Name="RestaurantID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RestaurantUsers_ToRestaurants">
+          <End Role="Restaurants" Type="eMunching_LoyaltyModel.Store.Restaurants" Multiplicity="1" />
+          <End Role="RestaurantUsers" Type="eMunching_LoyaltyModel.Store.RestaurantUsers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Restaurants">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RestaurantUsers">
+              <PropertyRef Name="RestaurantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reward_RewardType">
+          <End Role="RewardTypes" Type="eMunching_LoyaltyModel.Store.RewardTypes" Multiplicity="1" />
+          <End Role="Rewards" Type="eMunching_LoyaltyModel.Store.Rewards" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RewardTypes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Rewards">
+              <PropertyRef Name="RewardType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RunningCount_ToTableRestaurant">
+          <End Role="Restaurants" Type="eMunching_LoyaltyModel.Store.Restaurants" Multiplicity="1" />
+          <End Role="RunningCounts" Type="eMunching_LoyaltyModel.Store.RunningCounts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Restaurants">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RunningCounts">
+              <PropertyRef Name="RestaurantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RunningCount_ToTableRewards">
+          <End Role="Rewards" Type="eMunching_LoyaltyModel.Store.Rewards" Multiplicity="1" />
+          <End Role="RunningCounts" Type="eMunching_LoyaltyModel.Store.RunningCounts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rewards">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RunningCounts">
+              <PropertyRef Name="RewardId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SettlementInfo_Archive_ToGenerated_UniqueCode">
+          <End Role="Generated_UniqueCode" Type="eMunching_LoyaltyModel.Store.Generated_UniqueCode" Multiplicity="1" />
+          <End Role="SettlementInfo_Archive" Type="eMunching_LoyaltyModel.Store.SettlementInfo_Archive" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Generated_UniqueCode">
+              <PropertyRef Name="UniqueCode" />
+            </Principal>
+            <Dependent Role="SettlementInfo_Archive">
+              <PropertyRef Name="UniqueCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SettlementInfo_Archive_ToRestaurant">
+          <End Role="Restaurants" Type="eMunching_LoyaltyModel.Store.Restaurants" Multiplicity="1" />
+          <End Role="SettlementInfo_Archive" Type="eMunching_LoyaltyModel.Store.SettlementInfo_Archive" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Restaurants">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SettlementInfo_Archive">
+              <PropertyRef Name="RestaurantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SettlementInfo_ToTableRestaurant">
+          <End Role="Restaurants" Type="eMunching_LoyaltyModel.Store.Restaurants" Multiplicity="1" />
+          <End Role="SettlementInfoes" Type="eMunching_LoyaltyModel.Store.SettlementInfoes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Restaurants">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SettlementInfoes">
+              <PropertyRef Name="RestaurantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UniqueCode_Archive_ToTableRestaurant">
+          <End Role="Restaurants" Type="eMunching_LoyaltyModel.Store.Restaurants" Multiplicity="1" />
+          <End Role="UniqueCode_Archive" Type="eMunching_LoyaltyModel.Store.UniqueCode_Archive" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Restaurants">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UniqueCode_Archive">
+              <PropertyRef Name="RestaurantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UniqueCode_UserMapping_ToTableRestaurant">
+          <End Role="Restaurants" Type="eMunching_LoyaltyModel.Store.Restaurants" Multiplicity="1" />
+          <End Role="UniqueCode_UserMapping" Type="eMunching_LoyaltyModel.Store.UniqueCode_UserMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Restaurants">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UniqueCode_UserMapping">
+              <PropertyRef Name="RestaurantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserProfileRestaurantUser">
+          <End Role="UserProfile" Type="eMunching_LoyaltyModel.Store.UserProfile" Multiplicity="1" />
+          <End Role="RestaurantUsers" Type="eMunching_LoyaltyModel.Store.RestaurantUsers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserProfile">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="RestaurantUsers">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_webpages_RolesTempUser">
+          <End Role="webpages_Roles" Type="eMunching_LoyaltyModel.Store.webpages_Roles" Multiplicity="1" />
+          <End Role="TempUsers" Type="eMunching_LoyaltyModel.Store.TempUsers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="webpages_Roles">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="TempUsers">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="eMunching_LoyaltyModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="eMunching_LoyaltyEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CouponCode_UniqueCodeMapping" EntityType="eMunching_LoyaltyModel.CouponCode_UniqueCodeMapping" />
+          <EntitySet Name="Generated_CouponCode" EntityType="eMunching_LoyaltyModel.Generated_CouponCode" />
+          <EntitySet Name="Generated_UniqueCode" EntityType="eMunching_LoyaltyModel.Generated_UniqueCode" />
+          <EntitySet Name="ItemCodes" EntityType="eMunching_LoyaltyModel.ItemCode" />
+          <EntitySet Name="LoyaltyTypes" EntityType="eMunching_LoyaltyModel.LoyaltyType" />
+          <EntitySet Name="OrderDetails" EntityType="eMunching_LoyaltyModel.OrderDetail" />
+          <EntitySet Name="OrderDetail_Archive" EntityType="eMunching_LoyaltyModel.OrderDetail_Archive" />
+          <EntitySet Name="Restaurants" EntityType="eMunching_LoyaltyModel.Restaurant" />
+          <EntitySet Name="RunningCounts" EntityType="eMunching_LoyaltyModel.RunningCount" />
+          <EntitySet Name="SettlementInfoes" EntityType="eMunching_LoyaltyModel.SettlementInfo" />
+          <EntitySet Name="SettlementInfo_Archive" EntityType="eMunching_LoyaltyModel.SettlementInfo_Archive" />
+          <EntitySet Name="UniqueCode_UserMapping" EntityType="eMunching_LoyaltyModel.UniqueCode_UserMapping" />
+          <AssociationSet Name="FK_Generated_CouponCode_ToTableRestaurant" Association="eMunching_LoyaltyModel.FK_Generated_CouponCode_ToTableRestaurant">
+            <End Role="Restaurant" EntitySet="Restaurants" />
+            <End Role="Generated_CouponCode" EntitySet="Generated_CouponCode" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Generated_UniqueCodes_ToTableRestaurant" Association="eMunching_LoyaltyModel.FK_Generated_UniqueCodes_ToTableRestaurant">
+            <End Role="Restaurant" EntitySet="Restaurants" />
+            <End Role="Generated_UniqueCode" EntitySet="Generated_UniqueCode" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SettlementInfo_Archive_ToGenerated_UniqueCode" Association="eMunching_LoyaltyModel.FK_SettlementInfo_Archive_ToGenerated_UniqueCode">
+            <End Role="Generated_UniqueCode" EntitySet="Generated_UniqueCode" />
+            <End Role="SettlementInfo_Archive" EntitySet="SettlementInfo_Archive" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ItemCode_ToTableRestaurant" Association="eMunching_LoyaltyModel.FK_ItemCode_ToTableRestaurant">
+            <End Role="Restaurant" EntitySet="Restaurants" />
+            <End Role="ItemCode" EntitySet="ItemCodes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderDetail_Archive_ToItemCode" Association="eMunching_LoyaltyModel.FK_OrderDetail_Archive_ToItemCode">
+            <End Role="ItemCode" EntitySet="ItemCodes" />
+            <End Role="OrderDetail_Archive" EntitySet="OrderDetail_Archive" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderDetail_ToItemCode" Association="eMunching_LoyaltyModel.FK_OrderDetail_ToItemCode">
+            <End Role="ItemCode" EntitySet="ItemCodes" />
+            <End Role="OrderDetail" EntitySet="OrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Restaurant_ToLoyaltyType" Association="eMunching_LoyaltyModel.FK_Restaurant_ToLoyaltyType">
+            <End Role="LoyaltyType" EntitySet="LoyaltyTypes" />
+            <End Role="Restaurant" EntitySet="Restaurants" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderDetail_ToRestaurant" Association="eMunching_LoyaltyModel.FK_OrderDetail_ToRestaurant">
+            <End Role="Restaurant" EntitySet="Restaurants" />
+            <End Role="OrderDetail" EntitySet="OrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderDetail_ToSettlementInfo" Association="eMunching_LoyaltyModel.FK_OrderDetail_ToSettlementInfo">
+            <End Role="SettlementInfo" EntitySet="SettlementInfoes" />
+            <End Role="OrderDetail" EntitySet="OrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderDetail_Archive_ToRestaurant" Association="eMunching_LoyaltyModel.FK_OrderDetail_Archive_ToRestaurant">
+            <End Role="Restaurant" EntitySet="Restaurants" />
+            <End Role="OrderDetail_Archive" EntitySet="OrderDetail_Archive" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderDetail_Archive_ToSettlementInfo" Association="eMunching_LoyaltyModel.FK_OrderDetail_Archive_ToSettlementInfo">
+            <End Role="SettlementInfo" EntitySet="SettlementInfoes" />
+            <End Role="OrderDetail_Archive" EntitySet="OrderDetail_Archive" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RunningCount_ToTableRestaurant" Association="eMunching_LoyaltyModel.FK_RunningCount_ToTableRestaurant">
+            <End Role="Restaurant" EntitySet="Restaurants" />
+            <End Role="RunningCount" EntitySet="RunningCounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SettlementInfo_Archive_ToRestaurant" Association="eMunching_LoyaltyModel.FK_SettlementInfo_Archive_ToRestaurant">
+            <End Role="Restaurant" EntitySet="Restaurants" />
+            <End Role="SettlementInfo_Archive" EntitySet="SettlementInfo_Archive" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SettlementInfo_ToTableRestaurant" Association="eMunching_LoyaltyModel.FK_SettlementInfo_ToTableRestaurant">
+            <End Role="Restaurant" EntitySet="Restaurants" />
+            <End Role="SettlementInfo" EntitySet="SettlementInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UniqueCode_UserMapping_ToTableRestaurant" Association="eMunching_LoyaltyModel.FK_UniqueCode_UserMapping_ToTableRestaurant">
+            <End Role="Restaurant" EntitySet="Restaurants" />
+            <End Role="UniqueCode_UserMapping" EntitySet="UniqueCode_UserMapping" />
+          </AssociationSet>
+          <EntitySet Name="CreateNotifier_UniqueCodes" EntityType="eMunching_LoyaltyModel.CreateNotifier_UniqueCodes" />
+          <AssociationSet Name="FK_CreateNotifier_UniqueCodes_ToRestaurant" Association="eMunching_LoyaltyModel.FK_CreateNotifier_UniqueCodes_ToRestaurant">
+            <End Role="Restaurant" EntitySet="Restaurants" />
+            <End Role="CreateNotifier_UniqueCodes" EntitySet="CreateNotifier_UniqueCodes" />
+          </AssociationSet>
+          <EntitySet Name="UniqueCode_Archive" EntityType="eMunching_LoyaltyModel.UniqueCode_Archive" />
+          <AssociationSet Name="FK_UniqueCode_Archive_ToTableRestaurant" Association="eMunching_LoyaltyModel.FK_UniqueCode_Archive_ToTableRestaurant">
+            <End Role="Restaurant" EntitySet="Restaurants" />
+            <End Role="UniqueCode_Archive" EntitySet="UniqueCode_Archive" />
+          </AssociationSet>
+          <EntitySet Name="RestaurantUsers" EntityType="eMunching_LoyaltyModel.RestaurantUser" />
+          <EntitySet Name="webpages_Membership" EntityType="eMunching_LoyaltyModel.webpages_Membership" />
+          <EntitySet Name="webpages_OAuthMembership" EntityType="eMunching_LoyaltyModel.webpages_OAuthMembership" />
+          <EntitySet Name="webpages_Roles" EntityType="eMunching_LoyaltyModel.webpages_Roles" />
+          <AssociationSet Name="FK_RestaurantUsers_ToRestaurants" Association="eMunching_LoyaltyModel.FK_RestaurantUsers_ToRestaurants">
+            <End Role="Restaurant" EntitySet="Restaurants" />
+            <End Role="RestaurantUser" EntitySet="RestaurantUsers" />
+          </AssociationSet>
+          <EntitySet Name="TempUsers" EntityType="eMunching_LoyaltyModel.TempUser" />
+          <AssociationSet Name="RestaurantTempUser" Association="eMunching_LoyaltyModel.RestaurantTempUser">
+            <End Role="Restaurant" EntitySet="Restaurants" />
+            <End Role="TempUser" EntitySet="TempUsers" />
+          </AssociationSet>
+          <AssociationSet Name="webpages_RolesTempUser" Association="eMunching_LoyaltyModel.webpages_RolesTempUser">
+            <End Role="webpages_Roles" EntitySet="webpages_Roles" />
+            <End Role="TempUser" EntitySet="TempUsers" />
+          </AssociationSet>
+          <EntitySet Name="Rewards" EntityType="eMunching_LoyaltyModel.Reward" />
+          <AssociationSet Name="RestaurantReward" Association="eMunching_LoyaltyModel.RestaurantReward">
+            <End Role="Restaurant" EntitySet="Restaurants" />
+            <End Role="Reward" EntitySet="Rewards" />
+          </AssociationSet>
+          <EntitySet Name="UserProfiles" EntityType="eMunching_LoyaltyModel.UserProfile" />
+          <AssociationSet Name="webpages_UsersInRoles1" Association="eMunching_LoyaltyModel.webpages_UsersInRoles1">
+            <End Role="webpages_Roles" EntitySet="webpages_Roles" />
+            <End Role="UserProfile1" EntitySet="UserProfiles" />
+          </AssociationSet>
+          <AssociationSet Name="UserProfileRestaurantUser" Association="eMunching_LoyaltyModel.UserProfileRestaurantUser">
+            <End Role="UserProfile" EntitySet="UserProfiles" />
+            <End Role="RestaurantUser" EntitySet="RestaurantUsers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RunningCount_ToTableRewards" Association="eMunching_LoyaltyModel.FK_RunningCount_ToTableRewards">
+            <End Role="Reward" EntitySet="Rewards" />
+            <End Role="RunningCount" EntitySet="RunningCounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Generated_CouponCode_ToTableRewards" Association="eMunching_LoyaltyModel.FK_Generated_CouponCode_ToTableRewards">
+            <End Role="Reward" EntitySet="Rewards" />
+            <End Role="Generated_CouponCode" EntitySet="Generated_CouponCode" />
+          </AssociationSet>
+          <AssociationSet Name="Admin_CouponCode_Mapping" Association="eMunching_LoyaltyModel.Admin_CouponCode_Mapping">
+            <End Role="Generated_CouponCode" EntitySet="Generated_CouponCode" />
+            <End Role="UserProfile" EntitySet="UserProfiles" />
+          </AssociationSet>
+          <EntitySet Name="Payloads" EntityType="eMunching_LoyaltyModel.Payload" />
+          <AssociationSet Name="FK_RestaurantPayload" Association="eMunching_LoyaltyModel.FK_RestaurantPayload">
+            <End Role="Restaurant" EntitySet="Restaurants" />
+            <End Role="Payload" EntitySet="Payloads" />
+          </AssociationSet>
+          <EntitySet Name="Generated_SimpleCouponCode" EntityType="eMunching_LoyaltyModel.Generated_SimpleCouponCode" />
+          <AssociationSet Name="FK_Generated_SimpleCouponCode_ToTableRestaurant" Association="eMunching_LoyaltyModel.FK_Generated_SimpleCouponCode_ToTableRestaurant">
+            <End Role="Restaurant" EntitySet="Restaurants" />
+            <End Role="Generated_SimpleCouponCode" EntitySet="Generated_SimpleCouponCode" />
+          </AssociationSet>
+          <EntitySet Name="ErrorLogs" EntityType="eMunching_LoyaltyModel.ErrorLogs" />
+          <EntitySet Name="BillAmount" EntityType="eMunching_LoyaltyModel.BillAmount" />
+          <EntitySet Name="RewardTypes" EntityType="eMunching_LoyaltyModel.RewardTypes" />
+          <AssociationSet Name="FK_Reward_RewardType1" Association="eMunching_LoyaltyModel.FK_Reward_RewardType1">
+            <End Role="RewardTypes" EntitySet="RewardTypes" />
+            <End Role="Reward" EntitySet="Rewards" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="CouponCode_UniqueCodeMapping">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="CouponCode" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="UniqueCode" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Generated_CouponCode">
+          <Key>
+            <PropertyRef Name="CouponCode" />
+          </Key>
+          <Property Name="CouponCode" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="RestaurantId" Type="Int32" Nullable="false" />
+          <Property Name="EmailAddress" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IsAssigned" Type="Boolean" Nullable="false" />
+          <Property Name="IsRedeemed" Type="Boolean" Nullable="false" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" />
+          <Property Name="DateRedeemed" Type="DateTime" />
+          <NavigationProperty Name="Restaurant" Relationship="eMunching_LoyaltyModel.FK_Generated_CouponCode_ToTableRestaurant" FromRole="Generated_CouponCode" ToRole="Restaurant" />
+          <Property Type="Int32" Name="RewardId" Nullable="false" />
+          <NavigationProperty Name="Reward" Relationship="eMunching_LoyaltyModel.FK_Generated_CouponCode_ToTableRewards" FromRole="Generated_CouponCode" ToRole="Reward" />
+          <NavigationProperty Name="UserProfile" Relationship="eMunching_LoyaltyModel.Admin_CouponCode_Mapping" FromRole="Generated_CouponCode" ToRole="UserProfile" />
+          <Property Type="DateTime" Name="ExpirationDate" />
+        </EntityType>
+        <EntityType Name="Generated_UniqueCode">
+          <Key>
+            <PropertyRef Name="UniqueCode" />
+          </Key>
+          <Property Name="UniqueCode" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" />
+          <Property Name="RestaurantId" Type="Int32" Nullable="false" />
+          <Property Name="IsValidated" Type="Boolean" Nullable="false" />
+          <Property Name="DateValidated" Type="DateTime" />
+          <NavigationProperty Name="Restaurant" Relationship="eMunching_LoyaltyModel.FK_Generated_UniqueCodes_ToTableRestaurant" FromRole="Generated_UniqueCode" ToRole="Restaurant" />
+          <NavigationProperty Name="SettlementInfo_Archive" Relationship="eMunching_LoyaltyModel.FK_SettlementInfo_Archive_ToGenerated_UniqueCode" FromRole="Generated_UniqueCode" ToRole="SettlementInfo_Archive" />
+          <Property Type="Boolean" Name="IsAssigned" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ItemCode">
+          <Key>
+            <PropertyRef Name="ItemCode1" />
+            <PropertyRef Name="RestaurantId" />
+          </Key>
+          <Property Name="ItemCode1" Type="Int32" Nullable="false" />
+          <Property Name="RestaurantId" Type="Int32" Nullable="false" />
+          <Property Name="ItemName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="LoyaltyEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="LoyaltyPoints" Type="Int32" Nullable="false" />
+          <Property Name="LoyaltyMultiplier" Type="Int32" Nullable="false" />
+          <Property Name="BonusPoints" Type="Int32" Nullable="false" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" />
+          <Property Name="DateModified" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="Restaurant" Relationship="eMunching_LoyaltyModel.FK_ItemCode_ToTableRestaurant" FromRole="ItemCode" ToRole="Restaurant" />
+          <NavigationProperty Name="OrderDetail_Archive" Relationship="eMunching_LoyaltyModel.FK_OrderDetail_Archive_ToItemCode" FromRole="ItemCode" ToRole="OrderDetail_Archive" />
+          <NavigationProperty Name="OrderDetails" Relationship="eMunching_LoyaltyModel.FK_OrderDetail_ToItemCode" FromRole="ItemCode" ToRole="OrderDetail" />
+        </EntityType>
+        <EntityType Name="LoyaltyType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="LoyaltyType1" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Restaurants" Relationship="eMunching_LoyaltyModel.FK_Restaurant_ToLoyaltyType" FromRole="LoyaltyType" ToRole="Restaurant" />
+        </EntityType>
+        <EntityType Name="OrderDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BillNumber" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ItemCode" Type="Int32" Nullable="false" />
+          <Property Name="RestaurantId" Type="Int32" Nullable="false" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ItemCode1" Relationship="eMunching_LoyaltyModel.FK_OrderDetail_ToItemCode" FromRole="OrderDetail" ToRole="ItemCode" />
+          <NavigationProperty Name="Restaurant" Relationship="eMunching_LoyaltyModel.FK_OrderDetail_ToRestaurant" FromRole="OrderDetail" ToRole="Restaurant" />
+          <NavigationProperty Name="SettlementInfo" Relationship="eMunching_LoyaltyModel.FK_OrderDetail_ToSettlementInfo" FromRole="OrderDetail" ToRole="SettlementInfo" />
+        </EntityType>
+        <EntityType Name="OrderDetail_Archive">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BillNumber" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ItemCode" Type="Int32" Nullable="false" />
+          <Property Name="RestaurantId" Type="Int32" Nullable="false" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ItemCode1" Relationship="eMunching_LoyaltyModel.FK_OrderDetail_Archive_ToItemCode" FromRole="OrderDetail_Archive" ToRole="ItemCode" />
+          <NavigationProperty Name="Restaurant" Relationship="eMunching_LoyaltyModel.FK_OrderDetail_Archive_ToRestaurant" FromRole="OrderDetail_Archive" ToRole="Restaurant" />
+          <NavigationProperty Name="SettlementInfo" Relationship="eMunching_LoyaltyModel.FK_OrderDetail_Archive_ToSettlementInfo" FromRole="OrderDetail_Archive" ToRole="SettlementInfo" />
+        </EntityType>
+        <EntityType Name="Restaurant">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="RestaurantName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="LoyaltyID" Type="Int32" />
+          <NavigationProperty Name="Generated_CouponCode" Relationship="eMunching_LoyaltyModel.FK_Generated_CouponCode_ToTableRestaurant" FromRole="Restaurant" ToRole="Generated_CouponCode" />
+          <NavigationProperty Name="Generated_UniqueCode" Relationship="eMunching_LoyaltyModel.FK_Generated_UniqueCodes_ToTableRestaurant" FromRole="Restaurant" ToRole="Generated_UniqueCode" />
+          <NavigationProperty Name="ItemCodes" Relationship="eMunching_LoyaltyModel.FK_ItemCode_ToTableRestaurant" FromRole="Restaurant" ToRole="ItemCode" />
+          <NavigationProperty Name="LoyaltyType" Relationship="eMunching_LoyaltyModel.FK_Restaurant_ToLoyaltyType" FromRole="Restaurant" ToRole="LoyaltyType" />
+          <NavigationProperty Name="OrderDetails" Relationship="eMunching_LoyaltyModel.FK_OrderDetail_ToRestaurant" FromRole="Restaurant" ToRole="OrderDetail" />
+          <NavigationProperty Name="OrderDetail_Archive" Relationship="eMunching_LoyaltyModel.FK_OrderDetail_Archive_ToRestaurant" FromRole="Restaurant" ToRole="OrderDetail_Archive" />
+          <NavigationProperty Name="RunningCounts" Relationship="eMunching_LoyaltyModel.FK_RunningCount_ToTableRestaurant" FromRole="Restaurant" ToRole="RunningCount" />
+          <NavigationProperty Name="SettlementInfo_Archive" Relationship="eMunching_LoyaltyModel.FK_SettlementInfo_Archive_ToRestaurant" FromRole="Restaurant" ToRole="SettlementInfo_Archive" />
+          <NavigationProperty Name="SettlementInfoes" Relationship="eMunching_LoyaltyModel.FK_SettlementInfo_ToTableRestaurant" FromRole="Restaurant" ToRole="SettlementInfo" />
+          <NavigationProperty Name="UniqueCode_UserMapping" Relationship="eMunching_LoyaltyModel.FK_UniqueCode_UserMapping_ToTableRestaurant" FromRole="Restaurant" ToRole="UniqueCode_UserMapping" />
+          <NavigationProperty Name="CreateNotifier_UniqueCodes" Relationship="eMunching_LoyaltyModel.FK_CreateNotifier_UniqueCodes_ToRestaurant" FromRole="Restaurant" ToRole="CreateNotifier_UniqueCodes" />
+          <NavigationProperty Name="UniqueCode_Archive" Relationship="eMunching_LoyaltyModel.FK_UniqueCode_Archive_ToTableRestaurant" FromRole="Restaurant" ToRole="UniqueCode_Archive" />
+          <NavigationProperty Name="RestaurantUsers" Relationship="eMunching_LoyaltyModel.FK_RestaurantUsers_ToRestaurants" FromRole="Restaurant" ToRole="RestaurantUser" />
+          <NavigationProperty Name="TempUsers" Relationship="eMunching_LoyaltyModel.RestaurantTempUser" FromRole="Restaurant" ToRole="TempUser" />
+          <NavigationProperty Name="Rewards" Relationship="eMunching_LoyaltyModel.RestaurantReward" FromRole="Restaurant" ToRole="Reward" />
+          <NavigationProperty Name="Payloads" Relationship="eMunching_LoyaltyModel.FK_RestaurantPayload" FromRole="Restaurant" ToRole="Payload" />
+          <NavigationProperty Name="Generated_SimpleCouponCode" Relationship="eMunching_LoyaltyModel.FK_Generated_SimpleCouponCode_ToTableRestaurant" FromRole="Restaurant" ToRole="Generated_SimpleCouponCode" />
+        </EntityType>
+        <EntityType Name="RunningCount">
+          <Key>
+            <PropertyRef Name="EmailAddress" />
+            <PropertyRef Name="RestaurantId" />
+            <PropertyRef Name="RewardId" />
+          </Key>
+          <Property Name="EmailAddress" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="RestaurantId" Type="Int32" Nullable="false" />
+          <Property Name="RunningCount1" Type="Int32" Nullable="false" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" />
+          <Property Name="DateModified" Type="DateTime" Nullable="false" />
+          <Property Name="UpdateCount" Type="Int32" Nullable="false" />
+          <Property Name="LastRunningCount" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Restaurant" Relationship="eMunching_LoyaltyModel.FK_RunningCount_ToTableRestaurant" FromRole="RunningCount" ToRole="Restaurant" />
+          <Property Type="Int32" Name="RewardId" Nullable="false" />
+          <NavigationProperty Name="Reward" Relationship="eMunching_LoyaltyModel.FK_RunningCount_ToTableRewards" FromRole="RunningCount" ToRole="Reward" />
+        </EntityType>
+        <EntityType Name="SettlementInfo">
+          <Key>
+            <PropertyRef Name="BillNumber" />
+            <PropertyRef Name="RestaurantId" />
+          </Key>
+          <Property Name="BillNumber" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="RestaurantId" Type="Int32" Nullable="false" />
+          <Property Name="UniqueCode" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="EmailAddress" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IsServiced" Type="Boolean" Nullable="false" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" />
+          <Property Name="DateModified" Type="DateTime" Nullable="false" />
+          <Property Name="SettlementDate" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="OrderDetails" Relationship="eMunching_LoyaltyModel.FK_OrderDetail_ToSettlementInfo" FromRole="SettlementInfo" ToRole="OrderDetail" />
+          <NavigationProperty Name="OrderDetail_Archive" Relationship="eMunching_LoyaltyModel.FK_OrderDetail_Archive_ToSettlementInfo" FromRole="SettlementInfo" ToRole="OrderDetail_Archive" />
+          <NavigationProperty Name="Restaurant" Relationship="eMunching_LoyaltyModel.FK_SettlementInfo_ToTableRestaurant" FromRole="SettlementInfo" ToRole="Restaurant" />
+        </EntityType>
+        <EntityType Name="SettlementInfo_Archive">
+          <Key>
+            <PropertyRef Name="BillNumber" />
+            <PropertyRef Name="RestaurantId" />
+          </Key>
+          <Property Name="BillNumber" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="RestaurantId" Type="Int32" Nullable="false" />
+          <Property Name="UniqueCode" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="EmailAddress" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IsServiced" Type="Boolean" Nullable="false" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" />
+          <Property Name="DateModified" Type="DateTime" Nullable="false" />
+          <Property Name="SettlementDate" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="Generated_UniqueCode" Relationship="eMunching_LoyaltyModel.FK_SettlementInfo_Archive_ToGenerated_UniqueCode" FromRole="SettlementInfo_Archive" ToRole="Generated_UniqueCode" />
+          <NavigationProperty Name="Restaurant" Relationship="eMunching_LoyaltyModel.FK_SettlementInfo_Archive_ToRestaurant" FromRole="SettlementInfo_Archive" ToRole="Restaurant" />
+        </EntityType>
+        <EntityType Name="UniqueCode_UserMapping">
+          <Key>
+            <PropertyRef Name="UniqueCode" />
+          </Key>
+          <Property Name="UniqueCode" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="EmailAddress" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="RestaurantId" Type="Int32" Nullable="false" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="Restaurant" Relationship="eMunching_LoyaltyModel.FK_UniqueCode_UserMapping_ToTableRestaurant" FromRole="UniqueCode_UserMapping" ToRole="Restaurant" />
+        </EntityType>
+        <Association Name="FK_Generated_CouponCode_ToTableRestaurant">
+          <End Role="Restaurant" Type="eMunching_LoyaltyModel.Restaurant" Multiplicity="1" />
+          <End Role="Generated_CouponCode" Type="eMunching_LoyaltyModel.Generated_CouponCode" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Restaurant">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Generated_CouponCode">
+              <PropertyRef Name="RestaurantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Generated_UniqueCodes_ToTableRestaurant">
+          <End Role="Restaurant" Type="eMunching_LoyaltyModel.Restaurant" Multiplicity="1" />
+          <End Role="Generated_UniqueCode" Type="eMunching_LoyaltyModel.Generated_UniqueCode" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Restaurant">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Generated_UniqueCode">
+              <PropertyRef Name="RestaurantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SettlementInfo_Archive_ToGenerated_UniqueCode">
+          <End Role="Generated_UniqueCode" Type="eMunching_LoyaltyModel.Generated_UniqueCode" Multiplicity="1" />
+          <End Role="SettlementInfo_Archive" Type="eMunching_LoyaltyModel.SettlementInfo_Archive" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Generated_UniqueCode">
+              <PropertyRef Name="UniqueCode" />
+            </Principal>
+            <Dependent Role="SettlementInfo_Archive">
+              <PropertyRef Name="UniqueCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ItemCode_ToTableRestaurant">
+          <End Role="Restaurant" Type="eMunching_LoyaltyModel.Restaurant" Multiplicity="1" />
+          <End Role="ItemCode" Type="eMunching_LoyaltyModel.ItemCode" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Restaurant">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ItemCode">
+              <PropertyRef Name="RestaurantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderDetail_Archive_ToItemCode">
+          <End Role="ItemCode" Type="eMunching_LoyaltyModel.ItemCode" Multiplicity="1" />
+          <End Role="OrderDetail_Archive" Type="eMunching_LoyaltyModel.OrderDetail_Archive" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ItemCode">
+              <PropertyRef Name="ItemCode1" />
+              <PropertyRef Name="RestaurantId" />
+            </Principal>
+            <Dependent Role="OrderDetail_Archive">
+              <PropertyRef Name="ItemCode" />
+              <PropertyRef Name="RestaurantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderDetail_ToItemCode">
+          <End Role="ItemCode" Type="eMunching_LoyaltyModel.ItemCode" Multiplicity="1" />
+          <End Role="OrderDetail" Type="eMunching_LoyaltyModel.OrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ItemCode">
+              <PropertyRef Name="ItemCode1" />
+              <PropertyRef Name="RestaurantId" />
+            </Principal>
+            <Dependent Role="OrderDetail">
+              <PropertyRef Name="ItemCode" />
+              <PropertyRef Name="RestaurantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Restaurant_ToLoyaltyType">
+          <End Role="LoyaltyType" Type="eMunching_LoyaltyModel.LoyaltyType" Multiplicity="0..1" />
+          <End Role="Restaurant" Type="eMunching_LoyaltyModel.Restaurant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LoyaltyType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Restaurant">
+              <PropertyRef Name="LoyaltyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderDetail_ToRestaurant">
+          <End Role="Restaurant" Type="eMunching_LoyaltyModel.Restaurant" Multiplicity="1" />
+          <End Role="OrderDetail" Type="eMunching_LoyaltyModel.OrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Restaurant">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="OrderDetail">
+              <PropertyRef Name="RestaurantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderDetail_ToSettlementInfo">
+          <End Role="SettlementInfo" Type="eMunching_LoyaltyModel.SettlementInfo" Multiplicity="1" />
+          <End Role="OrderDetail" Type="eMunching_LoyaltyModel.OrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SettlementInfo">
+              <PropertyRef Name="BillNumber" />
+              <PropertyRef Name="RestaurantId" />
+            </Principal>
+            <Dependent Role="OrderDetail">
+              <PropertyRef Name="BillNumber" />
+              <PropertyRef Name="RestaurantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderDetail_Archive_ToRestaurant">
+          <End Role="Restaurant" Type="eMunching_LoyaltyModel.Restaurant" Multiplicity="1" />
+          <End Role="OrderDetail_Archive" Type="eMunching_LoyaltyModel.OrderDetail_Archive" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Restaurant">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="OrderDetail_Archive">
+              <PropertyRef Name="RestaurantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderDetail_Archive_ToSettlementInfo">
+          <End Role="SettlementInfo" Type="eMunching_LoyaltyModel.SettlementInfo" Multiplicity="1" />
+          <End Role="OrderDetail_Archive" Type="eMunching_LoyaltyModel.OrderDetail_Archive" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SettlementInfo">
+              <PropertyRef Name="BillNumber" />
+              <PropertyRef Name="RestaurantId" />
+            </Principal>
+            <Dependent Role="OrderDetail_Archive">
+              <PropertyRef Name="BillNumber" />
+              <PropertyRef Name="RestaurantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RunningCount_ToTableRestaurant">
+          <End Role="Restaurant" Type="eMunching_LoyaltyModel.Restaurant" Multiplicity="1" />
+          <End Role="RunningCount" Type="eMunching_LoyaltyModel.RunningCount" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Restaurant">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RunningCount">
+              <PropertyRef Name="RestaurantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SettlementInfo_Archive_ToRestaurant">
+          <End Role="Restaurant" Type="eMunching_LoyaltyModel.Restaurant" Multiplicity="1" />
+          <End Role="SettlementInfo_Archive" Type="eMunching_LoyaltyModel.SettlementInfo_Archive" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Restaurant">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SettlementInfo_Archive">
+              <PropertyRef Name="RestaurantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SettlementInfo_ToTableRestaurant">
+          <End Role="Restaurant" Type="eMunching_LoyaltyModel.Restaurant" Multiplicity="1" />
+          <End Role="SettlementInfo" Type="eMunching_LoyaltyModel.SettlementInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Restaurant">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SettlementInfo">
+              <PropertyRef Name="RestaurantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UniqueCode_UserMapping_ToTableRestaurant">
+          <End Role="Restaurant" Type="eMunching_LoyaltyModel.Restaurant" Multiplicity="1" />
+          <End Role="UniqueCode_UserMapping" Type="eMunching_LoyaltyModel.UniqueCode_UserMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Restaurant">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UniqueCode_UserMapping">
+              <PropertyRef Name="RestaurantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="CreateNotifier_UniqueCodes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Int32" Name="RestaurantId" Nullable="false" />
+          <Property Type="Boolean" Name="IsCreateNewCodes" Nullable="false" />
+          <Property Type="Int32" Name="NumberofCodesToGenerate" Nullable="false" />
+          <Property Type="Boolean" Name="IsServiced" Nullable="false" />
+          <NavigationProperty Name="Restaurant" Relationship="eMunching_LoyaltyModel.FK_CreateNotifier_UniqueCodes_ToRestaurant" FromRole="CreateNotifier_UniqueCodes" ToRole="Restaurant" />
+        </EntityType>
+        <Association Name="FK_CreateNotifier_UniqueCodes_ToRestaurant">
+          <End Type="eMunching_LoyaltyModel.Restaurant" Role="Restaurant" Multiplicity="1" />
+          <End Type="eMunching_LoyaltyModel.CreateNotifier_UniqueCodes" Role="CreateNotifier_UniqueCodes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Restaurant">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CreateNotifier_UniqueCodes">
+              <PropertyRef Name="RestaurantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="UniqueCode_Archive">
+          <Key>
+            <PropertyRef Name="UniqueCode" />
+          </Key>
+          <Property Type="String" Name="UniqueCode" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="DateCreated" Nullable="false" />
+          <Property Type="Int32" Name="RestaurantId" Nullable="false" />
+          <Property Type="DateTime" Name="DateValidated" />
+          <NavigationProperty Name="Restaurant" Relationship="eMunching_LoyaltyModel.FK_UniqueCode_Archive_ToTableRestaurant" FromRole="UniqueCode_Archive" ToRole="Restaurant" />
+        </EntityType>
+        <Association Name="FK_UniqueCode_Archive_ToTableRestaurant">
+          <End Type="eMunching_LoyaltyModel.Restaurant" Role="Restaurant" Multiplicity="1" />
+          <End Type="eMunching_LoyaltyModel.UniqueCode_Archive" Role="UniqueCode_Archive" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Restaurant">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UniqueCode_Archive">
+              <PropertyRef Name="RestaurantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="RestaurantUser">
+          <Key>
+            <PropertyRef Name="RestaurantId" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Type="Int32" Name="RestaurantId" Nullable="false" />
+          <Property Type="Int32" Name="UserId" Nullable="false" />
+          <NavigationProperty Name="Restaurant" Relationship="eMunching_LoyaltyModel.FK_RestaurantUsers_ToRestaurants" FromRole="RestaurantUser" ToRole="Restaurant" />
+          <NavigationProperty Name="UserProfile" Relationship="eMunching_LoyaltyModel.UserProfileRestaurantUser" FromRole="RestaurantUser" ToRole="UserProfile" />
+        </EntityType>
+        <EntityType Name="webpages_Membership">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Type="Int32" Name="UserId" Nullable="false" />
+          <Property Type="DateTime" Name="CreateDate" />
+          <Property Type="String" Name="ConfirmationToken" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsConfirmed" />
+          <Property Type="DateTime" Name="LastPasswordFailureDate" />
+          <Property Type="Int32" Name="PasswordFailuresSinceLastSuccess" Nullable="false" />
+          <Property Type="String" Name="Password" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="PasswordChangedDate" />
+          <Property Type="String" Name="PasswordSalt" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PasswordVerificationToken" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="PasswordVerificationTokenExpirationDate" />
+        </EntityType>
+        <EntityType Name="webpages_OAuthMembership">
+          <Key>
+            <PropertyRef Name="Provider" />
+            <PropertyRef Name="ProviderUserId" />
+          </Key>
+          <Property Type="String" Name="Provider" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ProviderUserId" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="UserId" Nullable="false" />
+        </EntityType>
+        <EntityType Name="webpages_Roles">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Type="Int32" Name="RoleId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="RoleName" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TempUsers" Relationship="eMunching_LoyaltyModel.webpages_RolesTempUser" FromRole="webpages_Roles" ToRole="TempUser" />
+          <NavigationProperty Name="UserProfiles_1" Relationship="eMunching_LoyaltyModel.webpages_UsersInRoles1" FromRole="webpages_Roles" ToRole="UserProfile1" />
+        </EntityType>
+        <Association Name="FK_RestaurantUsers_ToRestaurants">
+          <End Type="eMunching_LoyaltyModel.Restaurant" Role="Restaurant" Multiplicity="1" />
+          <End Type="eMunching_LoyaltyModel.RestaurantUser" Role="RestaurantUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Restaurant">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RestaurantUser">
+              <PropertyRef Name="RestaurantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="TempUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="EmailAddress" Nullable="false" />
+          <NavigationProperty Name="Restaurant" Relationship="eMunching_LoyaltyModel.RestaurantTempUser" FromRole="TempUser" ToRole="Restaurant" />
+          <Property Type="Int32" Name="RestaurantID" Nullable="false" />
+          <NavigationProperty Name="webpages_Roles" Relationship="eMunching_LoyaltyModel.webpages_RolesTempUser" FromRole="TempUser" ToRole="webpages_Roles" />
+          <Property Type="Int32" Name="RoleId" Nullable="false" />
+        </EntityType>
+        <Association Name="RestaurantTempUser">
+          <End Type="eMunching_LoyaltyModel.Restaurant" Role="Restaurant" Multiplicity="1" />
+          <End Type="eMunching_LoyaltyModel.TempUser" Role="TempUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Restaurant">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TempUser">
+              <PropertyRef Name="RestaurantID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="webpages_RolesTempUser">
+          <End Type="eMunching_LoyaltyModel.webpages_Roles" Role="webpages_Roles" Multiplicity="1" />
+          <End Type="eMunching_LoyaltyModel.TempUser" Role="TempUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="webpages_Roles">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="TempUser">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Reward">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <Property Type="String" Name="Description" Nullable="false" />
+          <Property Type="Int32" Name="NumberOfItems" Nullable="false" />
+          <Property Type="String" Name="EligibleSKUs" Nullable="false" />
+          <Property Type="String" Name="RewardSKUs" Nullable="false" />
+          <NavigationProperty Name="Restaurant" Relationship="eMunching_LoyaltyModel.RestaurantReward" FromRole="Reward" ToRole="Restaurant" />
+          <Property Type="Int32" Name="RestaurantID" Nullable="false" />
+          <NavigationProperty Name="RunningCounts" Relationship="eMunching_LoyaltyModel.FK_RunningCount_ToTableRewards" FromRole="Reward" ToRole="RunningCount" />
+          <NavigationProperty Name="Generated_CouponCode" Relationship="eMunching_LoyaltyModel.FK_Generated_CouponCode_ToTableRewards" FromRole="Reward" ToRole="Generated_CouponCode" />
+          <Property Type="String" Name="Image" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Validity" />
+          <Property Type="Int32" Name="Multiplier" Nullable="false" />
+          <Property Type="Int32" Name="RewardType" Nullable="false" />
+          <NavigationProperty Name="RewardTypes_1" Relationship="eMunching_LoyaltyModel.FK_Reward_RewardType1" FromRole="Reward" ToRole="RewardTypes" />
+        </EntityType>
+        <Association Name="RestaurantReward">
+          <End Type="eMunching_LoyaltyModel.Restaurant" Role="Restaurant" Multiplicity="1" />
+          <End Type="eMunching_LoyaltyModel.Reward" Role="Reward" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Restaurant">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Reward">
+              <PropertyRef Name="RestaurantID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="UserProfile">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Type="Int32" Name="UserId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="UserName" Nullable="false" MaxLength="56" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="webpages_Roles" Relationship="eMunching_LoyaltyModel.webpages_UsersInRoles1" FromRole="UserProfile1" ToRole="webpages_Roles" />
+          <NavigationProperty Name="RestaurantUsers" Relationship="eMunching_LoyaltyModel.UserProfileRestaurantUser" FromRole="UserProfile" ToRole="RestaurantUser" />
+          <NavigationProperty Name="Generated_CouponCode" Relationship="eMunching_LoyaltyModel.Admin_CouponCode_Mapping" FromRole="UserProfile" ToRole="Generated_CouponCode" />
+        </EntityType>
+        <Association Name="webpages_UsersInRoles1">
+          <End Type="eMunching_LoyaltyModel.webpages_Roles" Role="webpages_Roles" Multiplicity="*" />
+          <End Type="eMunching_LoyaltyModel.UserProfile" Role="UserProfile1" Multiplicity="*" />
+        </Association>
+        <Association Name="UserProfileRestaurantUser">
+          <End Type="eMunching_LoyaltyModel.UserProfile" Role="UserProfile" Multiplicity="1" />
+          <End Type="eMunching_LoyaltyModel.RestaurantUser" Role="RestaurantUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserProfile">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="RestaurantUser">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RunningCount_ToTableRewards">
+          <End Type="eMunching_LoyaltyModel.Reward" Role="Reward" Multiplicity="1" />
+          <End Type="eMunching_LoyaltyModel.RunningCount" Role="RunningCount" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Reward">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RunningCount">
+              <PropertyRef Name="RewardId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Generated_CouponCode_ToTableRewards">
+          <End Type="eMunching_LoyaltyModel.Reward" Role="Reward" Multiplicity="1" />
+          <End Type="eMunching_LoyaltyModel.Generated_CouponCode" Role="Generated_CouponCode" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Reward">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Generated_CouponCode">
+              <PropertyRef Name="RewardId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Admin_CouponCode_Mapping">
+          <End Type="eMunching_LoyaltyModel.Generated_CouponCode" Role="Generated_CouponCode" Multiplicity="*" />
+          <End Type="eMunching_LoyaltyModel.UserProfile" Role="UserProfile" Multiplicity="0..1" />
+        </Association>
+        <EntityType Name="Payload">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="LastReadFile" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="RestaurantID" Nullable="false" />
+          <Property Type="DateTime" Name="DateCreated" Nullable="false" />
+          <NavigationProperty Name="Restaurant" Relationship="eMunching_LoyaltyModel.FK_RestaurantPayload" FromRole="Payload" ToRole="Restaurant" />
+        </EntityType>
+        <Association Name="FK_RestaurantPayload">
+          <End Type="eMunching_LoyaltyModel.Restaurant" Role="Restaurant" Multiplicity="1" />
+          <End Type="eMunching_LoyaltyModel.Payload" Role="Payload" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Restaurant">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Payload">
+              <PropertyRef Name="RestaurantID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="BeersPunched" >
+          <Property Type="String" Name="BillNumber" Nullable="false" />
+          <Property Type="Int32" Name="ItemCode" Nullable="false" />
+          <Property Type="String" Name="UserEmail" Nullable="false" />
+          <Property Type="String" Name="ItemName" Nullable="false" />
+          <Property Type="DateTime" Name="Created" Nullable="false" />
+          <Property Type="Int32" Name="Quantity" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="CouponsGenerated" >
+          <Property Type="String" Name="CouponCode" Nullable="false" />
+          <Property Type="String" Name="EmailAddress" Nullable="false" />
+          <Property Type="Boolean" Name="IsRedeemed" Nullable="false" />
+          <Property Type="Boolean" Name="IsAssigned" Nullable="false" />
+          <Property Type="DateTime" Name="DateCreated" Nullable="false" />
+          <Property Type="DateTime" Name="DateRedeemed" Nullable="true" />
+        </ComplexType>
+        <EntityType Name="Generated_SimpleCouponCode">
+          <Key>
+            <PropertyRef Name="UniqueCode" />
+          </Key>
+          <Property Type="String" Name="UniqueCode" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="DateCreated" Nullable="false" />
+          <Property Type="Int32" Name="RestaurantId" Nullable="false" />
+          <Property Type="DateTime" Name="DateAssigned" />
+          <Property Type="Boolean" Name="IsAssigned" Nullable="false" />
+          <NavigationProperty Name="Restaurants" Relationship="eMunching_LoyaltyModel.FK_Generated_SimpleCouponCode_ToTableRestaurant" FromRole="Generated_SimpleCouponCode" ToRole="Restaurant" />
+        </EntityType>
+        <Association Name="FK_Generated_SimpleCouponCode_ToTableRestaurant">
+          <End Type="eMunching_LoyaltyModel.Restaurant" Role="Restaurant" Multiplicity="1" />
+          <End Type="eMunching_LoyaltyModel.Generated_SimpleCouponCode" Role="Generated_SimpleCouponCode" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Restaurant">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Generated_SimpleCouponCode">
+              <PropertyRef Name="RestaurantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ErrorLogs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="DateCreated" Nullable="false" />
+          <Property Type="String" Name="Error" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Action" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <ComplexType Name="MontlyUserAnalytics" >
+          <Property Type="String" Name="EmailAddress" Nullable="false" />
+          <Property Type="Int32" Name="Beers" Nullable="false" />
+          <Property Type="Int32" Name="Bills" Nullable="false" />
+          <Property Type="Double" Name="Amount" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="Bills" >
+          <Property Type="String" Name="BillNumber" Nullable="false" />
+          <Property Type="DateTime" Name="Created" Nullable="false" />
+          <Property Type="Int32" Name="BeerCount" Nullable="false" />
+          <Property Type="Double" Name="BillAmount" Nullable="false" />
+          <Property Type="String" Name="UserEmail" Nullable="false" />
+          <Property Type="String" Name="UniqueCode" Nullable="false" />
+        </ComplexType>
+        <EntityType Name="BillAmount">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="RestaurantId" Nullable="false" />
+          <Property Type="String" Name="BillNumber" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="NetAmount" Nullable="false" />
+          <Property Type="Double" Name="TaxAmount" Nullable="false" />
+          <Property Type="DateTime" Name="DateCreated" Nullable="false" />
+          <Property Type="DateTime" Name="DateModified" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RewardTypes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="RewardType" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Rewards_1" Relationship="eMunching_LoyaltyModel.FK_Reward_RewardType1" FromRole="RewardTypes" ToRole="Reward" />
+        </EntityType>
+        <Association Name="FK_Reward_RewardType1">
+          <End Type="eMunching_LoyaltyModel.RewardTypes" Role="RewardTypes" Multiplicity="1" />
+          <End Type="eMunching_LoyaltyModel.Reward" Role="Reward" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RewardTypes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Reward">
+              <PropertyRef Name="RewardType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="eMunching_LoyaltyModelStoreContainer" CdmEntityContainer="eMunching_LoyaltyEntities">
+    <EntitySetMapping Name="CouponCode_UniqueCodeMapping">
+      <EntityTypeMapping TypeName="IsTypeOf(eMunching_LoyaltyModel.CouponCode_UniqueCodeMapping)">
+        <MappingFragment StoreEntitySet="CouponCode_UniqueCodeMapping">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CouponCode" ColumnName="CouponCode" />
+          <ScalarProperty Name="UniqueCode" ColumnName="UniqueCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Generated_CouponCode">
+      <EntityTypeMapping TypeName="IsTypeOf(eMunching_LoyaltyModel.Generated_CouponCode)">
+        <MappingFragment StoreEntitySet="Generated_CouponCode">
+                <ScalarProperty Name="ExpirationDate" ColumnName="ExpirationDate" />
+                <ScalarProperty Name="RewardId" ColumnName="RewardId" />
+                <ScalarProperty Name="CouponCode" ColumnName="CouponCode" />
+          <ScalarProperty Name="RestaurantId" ColumnName="RestaurantId" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="IsAssigned" ColumnName="IsAssigned" />
+          <ScalarProperty Name="IsRedeemed" ColumnName="IsRedeemed" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="DateRedeemed" ColumnName="DateRedeemed" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Generated_UniqueCode">
+      <EntityTypeMapping TypeName="IsTypeOf(eMunching_LoyaltyModel.Generated_UniqueCode)">
+        <MappingFragment StoreEntitySet="Generated_UniqueCode">
+          <ScalarProperty Name="UniqueCode" ColumnName="UniqueCode" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="RestaurantId" ColumnName="RestaurantId" />
+          <ScalarProperty Name="IsValidated" ColumnName="IsValidated" />
+          <ScalarProperty Name="DateValidated" ColumnName="DateValidated" />
+          <ScalarProperty Name="IsAssigned" ColumnName="IsAssigned" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ItemCodes">
+      <EntityTypeMapping TypeName="IsTypeOf(eMunching_LoyaltyModel.ItemCode)">
+        <MappingFragment StoreEntitySet="ItemCodes">
+          <ScalarProperty Name="ItemCode1" ColumnName="ItemCode1" />
+          <ScalarProperty Name="RestaurantId" ColumnName="RestaurantId" />
+          <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+          <ScalarProperty Name="LoyaltyEnabled" ColumnName="LoyaltyEnabled" />
+          <ScalarProperty Name="LoyaltyPoints" ColumnName="LoyaltyPoints" />
+          <ScalarProperty Name="LoyaltyMultiplier" ColumnName="LoyaltyMultiplier" />
+          <ScalarProperty Name="BonusPoints" ColumnName="BonusPoints" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoyaltyTypes">
+      <EntityTypeMapping TypeName="IsTypeOf(eMunching_LoyaltyModel.LoyaltyType)">
+        <MappingFragment StoreEntitySet="LoyaltyTypes">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="LoyaltyType1" ColumnName="LoyaltyType1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderDetails">
+      <EntityTypeMapping TypeName="IsTypeOf(eMunching_LoyaltyModel.OrderDetail)">
+        <MappingFragment StoreEntitySet="OrderDetails">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="BillNumber" ColumnName="BillNumber" />
+          <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
+          <ScalarProperty Name="RestaurantId" ColumnName="RestaurantId" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderDetail_Archive">
+      <EntityTypeMapping TypeName="IsTypeOf(eMunching_LoyaltyModel.OrderDetail_Archive)">
+        <MappingFragment StoreEntitySet="OrderDetail_Archive">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="BillNumber" ColumnName="BillNumber" />
+          <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
+          <ScalarProperty Name="RestaurantId" ColumnName="RestaurantId" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Restaurants">
+      <EntityTypeMapping TypeName="IsTypeOf(eMunching_LoyaltyModel.Restaurant)">
+        <MappingFragment StoreEntitySet="Restaurants">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="RestaurantName" ColumnName="RestaurantName" />
+          <ScalarProperty Name="LoyaltyID" ColumnName="LoyaltyID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RunningCounts">
+      <EntityTypeMapping TypeName="IsTypeOf(eMunching_LoyaltyModel.RunningCount)">
+        <MappingFragment StoreEntitySet="RunningCounts">
+          <ScalarProperty Name="RewardId" ColumnName="RewardId" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="RestaurantId" ColumnName="RestaurantId" />
+          <ScalarProperty Name="RunningCount1" ColumnName="RunningCount1" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+          <ScalarProperty Name="UpdateCount" ColumnName="UpdateCount" />
+          <ScalarProperty Name="LastRunningCount" ColumnName="LastRunningCount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SettlementInfoes">
+      <EntityTypeMapping TypeName="IsTypeOf(eMunching_LoyaltyModel.SettlementInfo)">
+        <MappingFragment StoreEntitySet="SettlementInfoes">
+          <ScalarProperty Name="BillNumber" ColumnName="BillNumber" />
+          <ScalarProperty Name="RestaurantId" ColumnName="RestaurantId" />
+          <ScalarProperty Name="UniqueCode" ColumnName="UniqueCode" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="IsServiced" ColumnName="IsServiced" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+          <ScalarProperty Name="SettlementDate" ColumnName="SettlementDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SettlementInfo_Archive">
+      <EntityTypeMapping TypeName="IsTypeOf(eMunching_LoyaltyModel.SettlementInfo_Archive)">
+        <MappingFragment StoreEntitySet="SettlementInfo_Archive">
+          <ScalarProperty Name="BillNumber" ColumnName="BillNumber" />
+          <ScalarProperty Name="RestaurantId" ColumnName="RestaurantId" />
+          <ScalarProperty Name="UniqueCode" ColumnName="UniqueCode" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="IsServiced" ColumnName="IsServiced" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+          <ScalarProperty Name="SettlementDate" ColumnName="SettlementDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UniqueCode_UserMapping">
+      <EntityTypeMapping TypeName="IsTypeOf(eMunching_LoyaltyModel.UniqueCode_UserMapping)">
+        <MappingFragment StoreEntitySet="UniqueCode_UserMapping">
+          <ScalarProperty Name="UniqueCode" ColumnName="UniqueCode" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="RestaurantId" ColumnName="RestaurantId" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CreateNotifier_UniqueCodes">
+      <EntityTypeMapping TypeName="IsTypeOf(eMunching_LoyaltyModel.CreateNotifier_UniqueCodes)">
+        <MappingFragment StoreEntitySet="CreateNotifier_UniqueCodes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RestaurantId" ColumnName="RestaurantId" />
+          <ScalarProperty Name="IsCreateNewCodes" ColumnName="IsCreateNewCodes" />
+          <ScalarProperty Name="NumberofCodesToGenerate" ColumnName="NumberofCodesToGenerate" />
+          <ScalarProperty Name="IsServiced" ColumnName="IsServiced" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UniqueCode_Archive">
+      <EntityTypeMapping TypeName="IsTypeOf(eMunching_LoyaltyModel.UniqueCode_Archive)">
+        <MappingFragment StoreEntitySet="UniqueCode_Archive">
+          <ScalarProperty Name="UniqueCode" ColumnName="UniqueCode" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="RestaurantId" ColumnName="RestaurantId" />
+          <ScalarProperty Name="DateValidated" ColumnName="DateValidated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RestaurantUsers">
+      <EntityTypeMapping TypeName="IsTypeOf(eMunching_LoyaltyModel.RestaurantUser)">
+        <MappingFragment StoreEntitySet="RestaurantUsers">
+          <ScalarProperty Name="RestaurantId" ColumnName="RestaurantId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="webpages_Membership">
+      <EntityTypeMapping TypeName="IsTypeOf(eMunching_LoyaltyModel.webpages_Membership)">
+        <MappingFragment StoreEntitySet="webpages_Membership">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="ConfirmationToken" ColumnName="ConfirmationToken" />
+          <ScalarProperty Name="IsConfirmed" ColumnName="IsConfirmed" />
+          <ScalarProperty Name="LastPasswordFailureDate" ColumnName="LastPasswordFailureDate" />
+          <ScalarProperty Name="PasswordFailuresSinceLastSuccess" ColumnName="PasswordFailuresSinceLastSuccess" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="PasswordChangedDate" ColumnName="PasswordChangedDate" />
+          <ScalarProperty Name="PasswordSalt" ColumnName="PasswordSalt" />
+          <ScalarProperty Name="PasswordVerificationToken" ColumnName="PasswordVerificationToken" />
+          <ScalarProperty Name="PasswordVerificationTokenExpirationDate" ColumnName="PasswordVerificationTokenExpirationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="webpages_OAuthMembership">
+      <EntityTypeMapping TypeName="IsTypeOf(eMunching_LoyaltyModel.webpages_OAuthMembership)">
+        <MappingFragment StoreEntitySet="webpages_OAuthMembership">
+          <ScalarProperty Name="Provider" ColumnName="Provider" />
+          <ScalarProperty Name="ProviderUserId" ColumnName="ProviderUserId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="webpages_Roles">
+      <EntityTypeMapping TypeName="IsTypeOf(eMunching_LoyaltyModel.webpages_Roles)">
+        <MappingFragment StoreEntitySet="webpages_Roles">
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rewards">
+      <EntityTypeMapping TypeName="IsTypeOf(eMunching_LoyaltyModel.Reward)">
+        <MappingFragment StoreEntitySet="Rewards">
+          <ScalarProperty Name="RewardType" ColumnName="RewardType" />
+                <ScalarProperty Name="Multiplier" ColumnName="Multiplier" />
+                <ScalarProperty Name="Validity" ColumnName="Validity" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="NumberOfItems" ColumnName="NumberOfItems" />
+          <ScalarProperty Name="EligibleSKUs" ColumnName="EligibleSKUs" />
+          <ScalarProperty Name="RewardSKUs" ColumnName="RewardSKUs" />
+          <ScalarProperty Name="RestaurantID" ColumnName="RestaurantID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+          <EntitySetMapping Name="UserProfiles">
+            <EntityTypeMapping TypeName="eMunching_LoyaltyModel.UserProfile">
+              <MappingFragment StoreEntitySet="UserProfile">
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="webpages_UsersInRoles1" TypeName="eMunching_LoyaltyModel.webpages_UsersInRoles1" StoreEntitySet="webpages_UsersInRoles">
+            <EndProperty Name="UserProfile1">
+              <ScalarProperty Name="UserId" ColumnName="UserId" />
+            </EndProperty>
+            <EndProperty Name="webpages_Roles">
+              <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <EntitySetMapping Name="TempUsers">
+            <EntityTypeMapping TypeName="IsTypeOf(eMunching_LoyaltyModel.TempUser)">
+              <MappingFragment StoreEntitySet="TempUsers">
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="RestaurantID" ColumnName="RestaurantID" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="Admin_CouponCode_Mapping" TypeName="eMunching_LoyaltyModel.Admin_CouponCode_Mapping" StoreEntitySet="Admin_CouponCode_Mapping">
+            <EndProperty Name="UserProfile">
+              <ScalarProperty Name="UserId" ColumnName="UserId" />
+            </EndProperty>
+            <EndProperty Name="Generated_CouponCode">
+              <ScalarProperty Name="CouponCode" ColumnName="CouponCode" />
+            </EndProperty>
+            <Condition ColumnName="UserId" IsNull="false" />
+          </AssociationSetMapping>
+          <EntitySetMapping Name="Payloads">
+            <EntityTypeMapping TypeName="eMunching_LoyaltyModel.Payload">
+              <MappingFragment StoreEntitySet="Payload">
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="RestaurantID" ColumnName="RestaurantID" />
+                <ScalarProperty Name="LastReadFile" ColumnName="LastReadFile" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Generated_SimpleCouponCode">
+            <EntityTypeMapping TypeName="eMunching_LoyaltyModel.Generated_SimpleCouponCode">
+              <MappingFragment StoreEntitySet="Generated_SimpleCouponCode">
+                <ScalarProperty Name="IsAssigned" ColumnName="IsAssigned" />
+                <ScalarProperty Name="DateAssigned" ColumnName="DateAssigned" />
+                <ScalarProperty Name="RestaurantId" ColumnName="RestaurantId" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="UniqueCode" ColumnName="UniqueCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ErrorLogs">
+            <EntityTypeMapping TypeName="eMunching_LoyaltyModel.ErrorLogs">
+              <MappingFragment StoreEntitySet="ErrorLogs">
+                <ScalarProperty Name="Action" ColumnName="Action" />
+                <ScalarProperty Name="Error" ColumnName="Error" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BillAmount">
+            <EntityTypeMapping TypeName="eMunching_LoyaltyModel.BillAmount">
+              <MappingFragment StoreEntitySet="BillAmount">
+                <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="TaxAmount" ColumnName="TaxAmount" />
+                <ScalarProperty Name="NetAmount" ColumnName="NetAmount" />
+                <ScalarProperty Name="BillNumber" ColumnName="BillNumber" />
+                <ScalarProperty Name="RestaurantId" ColumnName="RestaurantId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RewardTypes">
+            <EntityTypeMapping TypeName="eMunching_LoyaltyModel.RewardTypes">
+              <MappingFragment StoreEntitySet="RewardTypes">
+                <ScalarProperty Name="RewardType" ColumnName="RewardType" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="eMunching_Loyalty" ZoomLevel="89">
+        <EntityTypeShape EntityType="eMunching_LoyaltyModel.CouponCode_UniqueCodeMapping" Width="1.5" PointX="0.75" PointY="0.75" Height="1.59568359375" IsExpanded="true" />
+        <EntityTypeShape EntityType="eMunching_LoyaltyModel.Generated_CouponCode" Width="1.5" PointX="5.25" PointY="6.375" Height="3.3263964843749996" IsExpanded="true" />
+        <EntityTypeShape EntityType="eMunching_LoyaltyModel.Generated_UniqueCode" Width="1.5" PointX="5.25" PointY="9.625" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="eMunching_LoyaltyModel.ItemCode" Width="1.5" PointX="5.25" PointY="12.75" Height="3.3263964843749978" IsExpanded="true" />
+        <EntityTypeShape EntityType="eMunching_LoyaltyModel.LoyaltyType" Width="1.5" PointX="0.75" PointY="15.5" Height="1.5956835937500014" IsExpanded="true" />
+        <EntityTypeShape EntityType="eMunching_LoyaltyModel.OrderDetail" Width="1.5" PointX="7.5" PointY="16.75" Height="2.5571907552083353" IsExpanded="true" />
+        <EntityTypeShape EntityType="eMunching_LoyaltyModel.OrderDetail_Archive" Width="1.5" PointX="10.5" PointY="16.75" Height="2.5571907552083317" IsExpanded="true" />
+        <EntityTypeShape EntityType="eMunching_LoyaltyModel.Restaurant" Width="1.5" PointX="3" PointY="14.25" Height="3.9033007812500014" IsExpanded="true" />
+        <EntityTypeShape EntityType="eMunching_LoyaltyModel.RunningCount" Width="1.5" PointX="5.25" PointY="16.875" Height="2.5571907552083317" IsExpanded="true" />
+        <EntityTypeShape EntityType="eMunching_LoyaltyModel.SettlementInfo" Width="1.5" PointX="5.25" PointY="20.125" Height="3.1340950520833317" IsExpanded="true" />
+        <EntityTypeShape EntityType="eMunching_LoyaltyModel.SettlementInfo_Archive" Width="1.5" PointX="7.5" PointY="12.5" Height="2.9417936197916674" IsExpanded="true" />
+        <EntityTypeShape EntityType="eMunching_LoyaltyModel.UniqueCode_UserMapping" Width="1.5" PointX="5.25" PointY="26.75" Height="1.9802864583333388" IsExpanded="true" />
+        <AssociationConnector Association="eMunching_LoyaltyModel.FK_Generated_CouponCode_ToTableRestaurant" ManuallyRouted="false">
+          <ConnectorPoint PointX="3.3054389765405423" PointY="14.25" />
+          <ConnectorPoint PointX="3.3054389765405423" PointY="8.0381982421875" />
+          <ConnectorPoint PointX="4.3229147916666673" PointY="8.0381982421875" />
+          <ConnectorPoint PointX="4.4895814583333333" PointY="8.0381982421875" />
+          <ConnectorPoint PointX="4.7916691666666669" PointY="8.0381982421875" />
+          <ConnectorPoint PointX="4.9583358333333329" PointY="8.0381982421875" />
+          <ConnectorPoint PointX="5.25" PointY="8.0381982421875" />
+        </AssociationConnector>
+        <AssociationConnector Association="eMunching_LoyaltyModel.FK_Generated_UniqueCodes_ToTableRestaurant" ManuallyRouted="false">
+          <ConnectorPoint PointX="3.6726272577905426" PointY="14.25" />
+          <ConnectorPoint PointX="3.6726272577905426" PointY="10.903595377604166" />
+          <ConnectorPoint PointX="4.3229147916666673" PointY="10.903595377604166" />
+          <ConnectorPoint PointX="4.4895814583333333" PointY="10.903595377604166" />
+          <ConnectorPoint PointX="4.7916691666666669" PointY="10.903595377604166" />
+          <ConnectorPoint PointX="4.9583358333333329" PointY="10.903595377604166" />
+          <ConnectorPoint PointX="5.25" PointY="10.903595377604166" />
+        </AssociationConnector>
+        <AssociationConnector Association="eMunching_LoyaltyModel.FK_SettlementInfo_Archive_ToGenerated_UniqueCode" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="10.807444661458334" />
+          <ConnectorPoint PointX="8.25" PointY="10.807444661458334" />
+          <ConnectorPoint PointX="8.25" PointY="12.5" />
+        </AssociationConnector>
+        <AssociationConnector Association="eMunching_LoyaltyModel.FK_ItemCode_ToTableRestaurant" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="14.881723052750612" />
+          <ConnectorPoint PointX="4.7916691666666669" PointY="14.881723052750612" />
+          <ConnectorPoint PointX="4.9583358333333329" PointY="14.881723052750612" />
+          <ConnectorPoint PointX="5.25" PointY="14.881723052750612" />
+        </AssociationConnector>
+        <AssociationConnector Association="eMunching_LoyaltyModel.FK_OrderDetail_Archive_ToItemCode" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="15.790345052083332" />
+          <ConnectorPoint PointX="9.7096341666666657" PointY="15.790345052083332" />
+          <ConnectorPoint PointX="9.9075533333333343" PointY="15.790345052083332" />
+          <ConnectorPoint PointX="11.25" PointY="15.790345052083332" />
+          <ConnectorPoint PointX="11.25" PointY="16.75" />
+        </AssociationConnector>
+        <AssociationConnector Association="eMunching_LoyaltyModel.FK_OrderDetail_ToItemCode" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.7500000000000018" PointY="16.076396484374996" />
+          <ConnectorPoint PointX="7.125" PointY="16.451396484374996" />
+          <ConnectorPoint PointX="7.125" PointY="16.373847153846153" />
+          <ConnectorPoint PointX="7.5011528461538459" PointY="16.75" />
+        </AssociationConnector>
+        <AssociationConnector Association="eMunching_LoyaltyModel.FK_Restaurant_ToLoyaltyType" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="16.297841796875" />
+          <ConnectorPoint PointX="3" PointY="16.297841796875" />
+        </AssociationConnector>
+        <AssociationConnector Association="eMunching_LoyaltyModel.FK_OrderDetail_ToRestaurant" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="16.78125" />
+          <ConnectorPoint PointX="7.5" PointY="16.78125" />
+        </AssociationConnector>
+        <AssociationConnector Association="eMunching_LoyaltyModel.FK_OrderDetail_ToSettlementInfo" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="22.099435657552082" />
+          <ConnectorPoint PointX="8.25" PointY="22.099435657552082" />
+          <ConnectorPoint PointX="8.25" PointY="19.307190755208335" />
+        </AssociationConnector>
+        <AssociationConnector Association="eMunching_LoyaltyModel.FK_OrderDetail_Archive_ToRestaurant" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="16.413195742187497" />
+          <ConnectorPoint PointX="9.7096341666666657" PointY="16.413195742187497" />
+          <ConnectorPoint PointX="9.9075533333333343" PointY="16.413195742187497" />
+          <ConnectorPoint PointX="10.8437475" PointY="16.413195742187497" />
+          <ConnectorPoint PointX="10.8437475" PointY="16.75" />
+        </AssociationConnector>
+        <AssociationConnector Association="eMunching_LoyaltyModel.FK_OrderDetail_Archive_ToSettlementInfo" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="20.87727126302083" />
+          <ConnectorPoint PointX="8.1666666666666661" PointY="20.87727126302083" />
+          <ConnectorPoint PointX="8.3333333333333339" PointY="20.87727126302083" />
+          <ConnectorPoint PointX="11.25" PointY="20.87727126302083" />
+          <ConnectorPoint PointX="11.25" PointY="19.307190755208332" />
+        </AssociationConnector>
+        <AssociationConnector Association="eMunching_LoyaltyModel.FK_RunningCount_ToTableRestaurant" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="17.994903971354169" />
+          <ConnectorPoint PointX="5.25" PointY="17.994903971354169" />
+        </AssociationConnector>
+        <AssociationConnector Association="eMunching_LoyaltyModel.FK_SettlementInfo_Archive_ToRestaurant" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.0394376913952712" PointY="14.25" />
+          <ConnectorPoint PointX="4.0394376913952712" PointY="12.59375" />
+          <ConnectorPoint PointX="4.3229147916666673" PointY="12.59375" />
+          <ConnectorPoint PointX="4.4895814583333333" PointY="12.59375" />
+          <ConnectorPoint PointX="4.7916691666666669" PointY="12.59375" />
+          <ConnectorPoint PointX="4.9583358333333329" PointY="12.59375" />
+          <ConnectorPoint PointX="7.5" PointY="12.59375" />
+        </AssociationConnector>
+        <AssociationConnector Association="eMunching_LoyaltyModel.FK_SettlementInfo_ToTableRestaurant" ManuallyRouted="false">
+          <ConnectorPoint PointX="3.8797805850219724" PointY="19.114807942708335" />
+          <ConnectorPoint PointX="3.8797805850219724" PointY="21.692047526041666" />
+          <ConnectorPoint PointX="4.1378094591776531" PointY="21.692047526041666" />
+          <ConnectorPoint PointX="4.3044761258443192" PointY="21.692047526041666" />
+          <ConnectorPoint PointX="4.30849056292216" PointY="21.692047526041666" />
+          <ConnectorPoint PointX="4.4751572295888264" PointY="21.692047526041666" />
+          <ConnectorPoint PointX="5.25" PointY="21.692047526041666" />
+        </AssociationConnector>
+        <AssociationConnector Association="eMunching_LoyaltyModel.FK_UniqueCode_UserMapping_ToTableRestaurant" ManuallyRouted="false">
+          <ConnectorPoint PointX="3.2751763696289062" PointY="19.114807942708335" />
+          <ConnectorPoint PointX="3.2751763696289062" PointY="27.740143229166669" />
+          <ConnectorPoint PointX="3.4941451439921063" PointY="27.740143229166669" />
+          <ConnectorPoint PointX="3.6608118106587733" PointY="27.740143229166669" />
+          <ConnectorPoint PointX="4.1378094591776531" PointY="27.740143229166669" />
+          <ConnectorPoint PointX="4.3044761258443192" PointY="27.740143229166669" />
+          <ConnectorPoint PointX="4.30849056292216" PointY="27.740143229166669" />
+          <ConnectorPoint PointX="4.4751572295888264" PointY="27.740143229166669" />
+          <ConnectorPoint PointX="5.25" PointY="27.740143229166669" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="eMunching_LoyaltyModel.CreateNotifier_UniqueCodes" Width="1.5" PointX="5.25" PointY="3.125" Height="2.1725878906250031" />
+        <AssociationConnector Association="eMunching_LoyaltyModel.FK_CreateNotifier_UniqueCodes_ToRestaurant" >
+          <ConnectorPoint PointX="4.406248125" PointY="14.25" />
+          <ConnectorPoint PointX="4.406248125" PointY="3.40625" />
+          <ConnectorPoint PointX="4.7916691666666669" PointY="3.4062499999999996" />
+          <ConnectorPoint PointX="4.9583358333333329" PointY="3.40625" />
+          <ConnectorPoint PointX="5.25" PointY="3.40625" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="eMunching_LoyaltyModel.UniqueCode_Archive" Width="1.5" PointX="5.25" PointY="30.25" Height="1.9802864583333353" />
+        <AssociationConnector Association="eMunching_LoyaltyModel.FK_UniqueCode_Archive_ToTableRestaurant" >
+          <ConnectorPoint PointX="4.2211427925109861" PointY="19.114807942708335" />
+          <ConnectorPoint PointX="4.2211427925109861" PointY="31.240143229166669" />
+          <ConnectorPoint PointX="4.30849056292216" PointY="31.240143229166669" />
+          <ConnectorPoint PointX="4.4751572295888264" PointY="31.240143229166669" />
+          <ConnectorPoint PointX="5.25" PointY="31.240143229166669" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="eMunching_LoyaltyModel.RestaurantUser" Width="1.5" PointX="3.75" PointY="0.75" Height="1.7879850260416665" />
+        <EntityTypeShape EntityType="eMunching_LoyaltyModel.webpages_Membership" Width="1.5" PointX="0.75" PointY="3.75" Height="3.1340950520833388" />
+        <EntityTypeShape EntityType="eMunching_LoyaltyModel.webpages_OAuthMembership" Width="1.5" PointX="2.75" PointY="3.75" Height="1.5956835937500031" />
+        <EntityTypeShape EntityType="eMunching_LoyaltyModel.webpages_Roles" Width="1.5" PointX="7.75" PointY="0.875" Height="1.5956835937500031" />
+        <AssociationConnector Association="eMunching_LoyaltyModel.FK_RestaurantUsers_ToRestaurants" >
+          <ConnectorPoint PointX="4.5" PointY="15.626144016725529" />
+          <ConnectorPoint PointX="4.8750025" PointY="15.626144016725529" />
+          <ConnectorPoint PointX="4.8750025" PointY="2.5379850260416665" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="eMunching_LoyaltyModel.TempUser" Width="1.5" PointX="0.75" PointY="13" Height="2.1725878906249996" />
+        <AssociationConnector Association="eMunching_LoyaltyModel.RestaurantTempUser">
+          <ConnectorPoint PointX="3" PointY="14.7112939453125" />
+          <ConnectorPoint PointX="2.25" PointY="14.7112939453125" />
+        </AssociationConnector>
+        <AssociationConnector Association="eMunching_LoyaltyModel.webpages_RolesTempUser">
+          <ConnectorPoint PointX="7.75" PointY="1.7689925130208333" />
+          <ConnectorPoint PointX="5.5" PointY="1.7689925130208333" />
+          <ConnectorPoint PointX="5.5" PointY="2.787985026041667" />
+          <ConnectorPoint PointX="4.9583358333333329" PointY="2.7879850260416665" />
+          <ConnectorPoint PointX="4.7916691666666669" PointY="2.787985026041667" />
+          <ConnectorPoint PointX="0.5" PointY="2.787985026041667" />
+          <ConnectorPoint PointX="0.5" PointY="12.625" />
+          <ConnectorPoint PointX="1.5" PointY="12.625" />
+          <ConnectorPoint PointX="1.5" PointY="13" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="eMunching_LoyaltyModel.Reward" Width="1.5" PointX="9.75" PointY="3.5" Height="3.3263964843749996" />
+        <AssociationConnector Association="eMunching_LoyaltyModel.RestaurantReward">
+          <ConnectorPoint PointX="4.5" PointY="16.581600371093742" />
+          <ConnectorPoint PointX="7.2494198839142561" PointY="16.581600371093742" />
+          <ConnectorPoint PointX="7.4160865505809221" PointY="16.581600371093742" />
+          <ConnectorPoint PointX="9.82422" PointY="16.581600371093742" />
+          <ConnectorPoint PointX="9.82422" PointY="7.5956022135416656" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="eMunching_LoyaltyModel.UserProfile" Width="1.5" PointX="10" PointY="7.125" Height="1.5956835937499951" />
+        <AssociationConnector Association="eMunching_LoyaltyModel.webpages_UsersInRoles1" >
+          <ConnectorPoint PointX="9.15625" PointY="2.6629850260416665" />
+          <ConnectorPoint PointX="9.15625" PointY="8.3336214778645754" />
+          <ConnectorPoint PointX="9.7086572916666665" PointY="8.3336214778645736" />
+          <ConnectorPoint PointX="9.9798195833333327" PointY="8.3336214778645754" />
+          <ConnectorPoint PointX="10" PointY="8.3336214778645754" />
+        </AssociationConnector>
+        <AssociationConnector Association="eMunching_LoyaltyModel.UserProfileRestaurantUser">
+          <ConnectorPoint PointX="11.40625" PointY="7.125" />
+          <ConnectorPoint PointX="11.40625" PointY="0.78124999999999978" />
+          <ConnectorPoint PointX="5.25" PointY="0.78124999999999978" />
+        </AssociationConnector>
+        <AssociationConnector Association="eMunching_LoyaltyModel.FK_RunningCount_ToTableRewards" >
+          <ConnectorPoint PointX="9.7929675" PointY="7.5956022135416656" />
+          <ConnectorPoint PointX="9.7929675" PointY="19.593242187500003" />
+          <ConnectorPoint PointX="8.3333333333333339" PointY="19.593242187500003" />
+          <ConnectorPoint PointX="8.1666666666666661" PointY="19.593242187500003" />
+          <ConnectorPoint PointX="6.75" PointY="19.593242187500003" />
+        </AssociationConnector>
+        <AssociationConnector Association="eMunching_LoyaltyModel.FK_Generated_CouponCode_ToTableRewards" >
+          <ConnectorPoint PointX="9.75" PointY="7.0355436197916656" />
+          <ConnectorPoint PointX="9.2395833333333339" PointY="7.0355436197916648" />
+          <ConnectorPoint PointX="9.0729166666666661" PointY="7.0355436197916656" />
+          <ConnectorPoint PointX="6.75" PointY="7.0355436197916656" />
+        </AssociationConnector>
+        <AssociationConnector Association="eMunching_LoyaltyModel.Admin_CouponCode_Mapping" >
+          <ConnectorPoint PointX="6.75" PointY="7.703892110373987" />
+          <ConnectorPoint PointX="9.0729166666666661" PointY="7.7038921103739861" />
+          <ConnectorPoint PointX="9.2395833333333339" PointY="7.703892110373987" />
+          <ConnectorPoint PointX="9.7096341666666657" PointY="7.7038921103739861" />
+          <ConnectorPoint PointX="9.9075533333333343" PointY="7.703892110373987" />
+          <ConnectorPoint PointX="10" PointY="7.703892110373987" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="eMunching_LoyaltyModel.Payload" Width="1.5" PointX="5.25" PointY="33.625" Height="1.9802864583333246" />
+        <AssociationConnector Association="eMunching_LoyaltyModel.FK_RestaurantPayload" >
+          <ConnectorPoint PointX="3.5774784773254398" PointY="19.114807942708335" />
+          <ConnectorPoint PointX="3.5774784773254398" PointY="34.615143229166662" />
+          <ConnectorPoint PointX="4.30849056292216" PointY="34.615143229166662" />
+          <ConnectorPoint PointX="4.4751572295888264" PointY="34.615143229166662" />
+          <ConnectorPoint PointX="5.25" PointY="34.615143229166662" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="eMunching_LoyaltyModel.Generated_SimpleCouponCode" Width="1.5" PointX="5.25" PointY="36.625" Height="2.172587890624996" />
+        <AssociationConnector Association="eMunching_LoyaltyModel.FK_Generated_SimpleCouponCode_ToTableRestaurant" >
+          <ConnectorPoint PointX="4.3918238962554934" PointY="19.114807942708335" />
+          <ConnectorPoint PointX="4.3918238962554934" PointY="37.7112939453125" />
+          <ConnectorPoint PointX="5.25" PointY="37.7112939453125" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="eMunching_LoyaltyModel.ErrorLogs" Width="1.5" PointX="0.75" PointY="7.75" Height="1.5956835937500102" />
+        <EntityTypeShape EntityType="eMunching_LoyaltyModel.BillAmount" Width="1.5" PointX="10.375" PointY="10.75" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="eMunching_LoyaltyModel.RewardTypes" Width="1.5" PointX="7.5" PointY="4.625" Height="1.595683593749996" />
+        <AssociationConnector Association="eMunching_LoyaltyModel.FK_Reward_RewardType1" >
+          <ConnectorPoint PointX="9" PointY="5.0094962565104169" />
+          <ConnectorPoint PointX="9.0729166666666661" PointY="5.009496256510416" />
+          <ConnectorPoint PointX="9.2395833333333339" PointY="5.0094962565104169" />
+          <ConnectorPoint PointX="9.75" PointY="5.0094962565104169" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

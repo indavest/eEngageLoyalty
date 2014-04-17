@@ -1,0 +1,39 @@
+﻿@model LoyaltyAdministration.Models.RestaurantModel
+
+@{
+    ViewBag.Title = "Provision Restaurant";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+
+<div class="addRestaurantDiv">
+@if (!IsPost)
+{
+    using (Html.BeginForm())
+    {
+        @Html.LabelFor(m => m.RestaurantName, "Restaurant Name")
+        @Html.TextBoxFor(m => m.RestaurantName)
+
+        @Html.LabelFor(m => m.RestaurantId, "Restaurant Id")
+        @Html.TextBoxFor(m => m.RestaurantId)
+
+        @Html.LabelFor(m => m.LoyaltyTypeId, "Loyalty Type")
+        @Html.DropDownListFor(m => m.LoyaltyTypeId, (SelectList)(ViewData["LoyaltyTypes"]))
+
+        <br />
+        <br />
+        <input type="submit" value="Submit" />
+        <br />
+        @Html.ValidationSummary()
+    }
+}
+</div>
+
+<div class="addRestaurantDiv">
+    <h3>@ViewData["ProvisionRestaurantStatus"]</h3>
+    <p>
+    @ViewData["ProvisionRestaurantMessage"]
+    </p>
+</div>

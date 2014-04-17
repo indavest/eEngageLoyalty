@@ -1,0 +1,40 @@
+﻿@{
+    if (Session["RestaurantName"] != null)
+    {
+        ViewBag.Title = Session["RestaurantName"] + " Administration";
+    }
+    else
+    {
+        ViewBag.Title = "Business Administration";
+    }
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Generate Coupons</h2>
+@using (Html.BeginForm("Generate", "Coupon", FormMethod.Post, new { @class = "generate-form" }))
+    {
+        <p><label class="generate-label">Select Reward :</label>
+        <select name="reward" class="input-medium">
+        @foreach (eMunching_Loyalty_DataManager.Reward reward in ViewBag.data)
+        {
+            <option value="@reward.Id">@reward.Name</option>
+        }
+        </select>
+        </p>
+        <p>
+        <label class="generate-label">Enter no.of Coupons :</label>
+        <input name="coupon_number" class="input-medium" value="" required />
+        </p>
+        <p>
+        <label class="generate-label">Expiry Date</label>
+        <input name="expiry_date" class="input-medium" value="" required id="expiryDate"/>
+        </p>
+        <input type="submit" value="Generate" />
+        <br />
+        @Html.ValidationSummary()
+    }
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            jQuery("#expiryDate").datepicker({ minDate: new Date().getDate + 1});
+        });
+    </script>

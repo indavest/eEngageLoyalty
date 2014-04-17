@@ -1,0 +1,104 @@
+﻿@model LoyaltyAdministration.Models.GiveawayCouponModel
+
+@{
+    if (Session["RestaurantName"] != null)
+    {
+        ViewBag.Title = Session["RestaurantName"] + " Administration";
+    }
+    else
+    {
+        ViewBag.Title = "Business Administration";
+    }
+
+    ViewBag.Title += ": Give reward coupons";
+    
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<br />
+
+<div id="CouponTable" style="width: 900px; margin: auto;"></div>
+
+<script type="text/javascript">
+    // Read a page's GET URL variables and return them as an associative array.
+    function getUrlVars() {
+        var vars = [], hash;
+        var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+
+        for (var i = 0; i < hashes.length; i++) {
+            hash = hashes[i].split('=');
+            vars.push(hash[0]);
+            vars[hash[0]] = hash[1];
+        }
+        return vars;
+    }
+
+    $(document).ready(function () {
+
+        //Prepare jtable plugin
+        $('#CouponTable').jtable({
+            title: 'Coupon List',
+            actions: {
+                listAction: '/Coupon/CouponList',
+                createAction: '/Coupon/CreateCoupon'
+            },
+            fields: {
+                CouponCode: {
+                    title: 'Coupon',
+                    key: true,
+                    list: true
+                },
+                RewardName: {
+                    title: 'Reward',
+                    create: false
+                },
+                RewardId: {
+                    title: 'Reward',
+                    options: '/Reward/RewardOptions',
+                    list: false,
+                    create: true
+                },
+                EmailAddress: {
+                    title: 'Email'
+                },
+                AdminUserName: {
+                    title: 'Admin',
+                    create: false
+                },
+                IsRedeemed: {
+                    title: 'Used?',
+                    type: 'checkbox',
+                    values: { 'false': 'No', 'true': 'Yes' },
+                    defaultValue: 'false',
+                    width: '5%',
+                    create: false
+                },
+                DateCreated: {
+                    title: 'Created',
+                    type: 'date',
+                    displayFormat: 'yy-mm-dd',
+                    create: false
+                },
+                DateRedeemed: {
+                    title: 'Redeemed',
+                    type: 'date',
+                    displayFormat: 'yy-mm-dd',
+                    create: false
+                },
+                ExpirationDate: {
+                    title: 'Expiration Date',
+                    type: 'date',
+                    displayFormat: 'yy-mm-dd',
+                    list: true,
+                    create: true
+                }
+            }
+        });
+
+        //Load person list from server
+        $('#CouponTable').jtable('load');
+    });
+
+</script>

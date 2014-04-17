@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "Loyalty Administration";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Loyalty Administration</h2>
+
+@{
+    string userName = User.Identity.Name;
+
+    @Html.Label("Welcome " + userName)
+    <br />
+    <br />
+    @Html.ActionLink("Redeem Coupon Codes", "/Redemption/Index")
+    <br />
+    @Html.ActionLink("View User's Coupon Codes", "/CouponCode/Index")
+    <br />
+    @Html.ActionLink("Award Coupon Codes", "/Award/Index")
+}
