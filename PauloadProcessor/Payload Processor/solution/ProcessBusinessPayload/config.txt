@@ -1,0 +1,3 @@
+﻿F:/apps/eMunching/eMunching-Payload-Processor/Payload/
+F:/apps/eMunching/eMunching-Payload-Processor/Payload/Archive/
+Data Source=.\\SQLEXPRESS;Initial Catalog=eMunching_Loyalty;Persist Security Info=True;User ID=MenuTrix;Password=..menutrix01;MultipleActiveResultSets=True
